@@ -4,7 +4,7 @@ const stats = [
   { value: '< 3s', label: 'Avg. Approval Time' },
   { value: 'Google', label: 'Live Now' },
   { value: '98%', label: 'Response Rate' },
-  { value: '10h+', label: 'Saved Per Week' },
+  { value: '10+', label: 'Hours Saved Weekly' },
 ];
 
 const features = [
