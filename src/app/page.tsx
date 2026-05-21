@@ -88,10 +88,9 @@ export default function HomePage() {
             Now in Beta — Google Maps First
           </div>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight" style={{ color: '#F8FAFC' }}>
-            Your Brand&apos;s{' '}
-            <span className="gradient-text">Reputation</span>
+            <span className="gradient-text">Shield</span> Your Brand&apos;s
             <br />
-            On Autopilot
+            Reputation. On Autopilot.
           </h1>
           <p className="text-xl sm:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed" style={{ color: '#94A3B8' }}>
             RepShield&apos;s AI drafts perfect responses to every Google review in seconds.
