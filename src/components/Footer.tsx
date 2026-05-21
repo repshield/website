@@ -6,7 +6,7 @@ const footerLinks = {
     { href: '/pricing', label: 'Pricing' },
   ],
   Company: [
-    { href: '/about', label: 'About Us' },
+    { href: '/about-us', label: 'About Us' },
     { href: 'mailto:hello@repshield.live', label: 'Contact' },
   ],
   Legal: [
