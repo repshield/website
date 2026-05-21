@@ -1,76 +1,12 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import PricingCards from './PricingCards';
 
 export const metadata: Metadata = {
   title: 'Pricing — RepShield',
-  description: 'Simple, transparent pricing for RepShield. Start at $49/month for a single location. Agency plans available.',
+  description:
+    'Industry-specific pricing for Indian businesses. Retail Core from ₹2,999/mo, Kinetic from ₹3,999/mo, Prestige from ₹4,999/mo. All prices exclude 18% GST.',
 };
-
-const plans = [
-  {
-    name: 'Starter',
-    price: '$49',
-    period: '/month',
-    description: 'Perfect for single-location businesses that want to dominate their Google reviews.',
-    badge: null,
-    features: [
-      '1 business location',
-      'Google Business Profile integration',
-      'AI draft engine (unlimited responses)',
-      'Brand Personality Matrix',
-      'Fact Library (1 location)',
-      'Web approval dashboard',
-      'Slack alert integration',
-      'Email support',
-    ],
-    cta: 'Start Free Trial',
-    ctaHref: '#',
-    highlighted: false,
-    accent: '#3B82F6',
-  },
-  {
-    name: 'Pro',
-    price: '$129',
-    period: '/month',
-    description: 'Multi-location businesses ready for mobile approvals and expanded platform coverage.',
-    badge: 'Most Popular',
-    features: [
-      'Up to 5 locations',
-      'Everything in Starter',
-      'Flutter mobile app (iOS & Android)',
-      '3-Second Swipe Approval',
-      'WhatsApp notification bot',
-      'Facebook Pages integration',
-      'Priority support',
-      'Analytics dashboard',
-    ],
-    cta: 'Start Free Trial',
-    ctaHref: '#',
-    highlighted: true,
-    accent: '#2563EB',
-  },
-  {
-    name: 'Agency',
-    price: 'Custom',
-    period: '',
-    description: 'For agencies managing multiple clients. White-label, custom domains, and full B2B tooling.',
-    badge: null,
-    features: [
-      'Unlimited client accounts',
-      'Everything in Pro',
-      'Agency Command Center',
-      'Full White-Label Engine',
-      'Custom domain mapping',
-      'Local Map Pack Rank Tracker',
-      'NFC / QR Review Kits',
-      'Dedicated account manager',
-    ],
-    cta: 'Contact Sales',
-    ctaHref: '#',
-    highlighted: false,
-    accent: '#22C55E',
-  },
-];
 
 const faqs = [
   {
@@ -94,24 +30,29 @@ const faqs = [
     a: 'Google Maps is live now. Facebook, Yelp, TripAdvisor, and WhatsApp are coming in Release 2.0. LinkedIn in Release 3.0.',
   },
   {
-    q: 'What is the Agency white-label option?',
-    a: 'Agency plans include full white-label deployment: custom domain mapping (reviews.youragency.com), branded UI, and a multi-tenant command center for managing client accounts.',
+    q: 'What about GST? Can I claim ITC?',
+    a: 'All listed prices exclude 18% GST. RepShield issues a proper GST invoice so B2B clients can claim full Input Tax Credit (ITC), effectively reducing the net operational cost of the subscription.',
+  },
+  {
+    q: 'What is the Agency / white-label option?',
+    a: 'The Prestige plan and above include white-label deployment options: custom domain mapping (reviews.youragency.com), branded UI, and a multi-tenant command center for managing client accounts.',
   },
 ];
 
 const comparisonFeatures = [
-  { feature: 'Business Locations', starter: '1', pro: 'Up to 5', agency: 'Unlimited' },
-  { feature: 'AI Response Drafts', starter: 'Unlimited', pro: 'Unlimited', agency: 'Unlimited' },
-  { feature: 'Google Maps Integration', starter: '✓', pro: '✓', agency: '✓' },
-  { feature: 'Brand Personality Matrix', starter: '✓', pro: '✓', agency: '✓' },
-  { feature: 'Fact Library', starter: '✓', pro: '✓', agency: '✓' },
-  { feature: 'Mobile App (iOS/Android)', starter: '—', pro: '✓', agency: '✓' },
-  { feature: 'WhatsApp Bot', starter: '—', pro: '✓', agency: '✓' },
-  { feature: 'Facebook Integration', starter: '—', pro: '✓', agency: '✓' },
-  { feature: 'Agency Command Center', starter: '—', pro: '—', agency: '✓' },
-  { feature: 'White-Label Engine', starter: '—', pro: '—', agency: '✓' },
-  { feature: 'SEO Rank Tracker', starter: '—', pro: '—', agency: '✓' },
-  { feature: 'NFC/QR Review Kits', starter: '—', pro: '—', agency: '✓' },
+  { feature: 'Business Locations', retail: '1', kinetic: 'Up to 3', prestige: 'Up to 5' },
+  { feature: 'AI Response Drafts', retail: 'Unlimited', kinetic: 'Unlimited', prestige: 'Unlimited' },
+  { feature: 'Google Maps Integration', retail: '✓', kinetic: '✓', prestige: '✓' },
+  { feature: 'Brand Personality Matrix', retail: '✓', kinetic: '✓', prestige: '✓' },
+  { feature: 'Fact Library', retail: '✓', kinetic: '✓', prestige: '✓' },
+  { feature: '"Short & Punchy" Config', retail: '✓', kinetic: '✓', prestige: '✓' },
+  { feature: 'Mobile App (iOS/Android)', retail: '—', kinetic: '✓', prestige: '✓' },
+  { feature: 'Dispute Resolution Workflow', retail: '—', kinetic: '✓', prestige: '✓' },
+  { feature: 'High-Ticket Escalation Alerts', retail: '—', kinetic: '✓', prestige: '✓' },
+  { feature: 'Compliance-Aware Engine', retail: '—', kinetic: '—', prestige: '✓' },
+  { feature: 'Agency Command Center', retail: '—', kinetic: '—', prestige: '✓' },
+  { feature: 'White-Label Ready', retail: '—', kinetic: '—', prestige: '✓' },
+  { feature: 'Dedicated Account Manager', retail: '—', kinetic: '—', prestige: '✓' },
 ];
 
 export default function PricingPage() {
@@ -123,10 +64,10 @@ export default function PricingPage() {
           style={{ background: 'radial-gradient(ellipse at top, #2563EB 0%, transparent 60%)' }} />
         <div className="max-w-3xl mx-auto relative z-10">
           <h1 className="text-5xl sm:text-6xl font-bold mb-6" style={{ color: '#F8FAFC' }}>
-            Simple, <span className="gradient-text">transparent</span> pricing
+            Industry-specific, <span className="gradient-text">transparent</span> pricing
           </h1>
           <p className="text-xl mb-4" style={{ color: '#94A3B8' }}>
-            No hidden fees. No per-response charges. Flat monthly pricing that scales with your business.
+            Built for Indian businesses. No hidden fees. No per-response charges. Flat monthly pricing matched to your industry.
           </p>
           <div className="flex items-center justify-center gap-2 text-sm" style={{ color: '#22C55E' }}>
             <span className="w-2 h-2 rounded-full" style={{ backgroundColor: '#22C55E' }} />
@@ -135,64 +76,8 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Pricing Cards */}
-      <section className="py-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-            {plans.map((plan) => (
-              <div
-                key={plan.name}
-                className={`relative rounded-2xl p-8 flex flex-col ${plan.highlighted ? 'shield-glow' : ''}`}
-                style={{
-                  backgroundColor: plan.highlighted ? 'rgba(19,27,46,0.9)' : '#0F1626',
-                  border: plan.highlighted
-                    ? '1px solid rgba(37,99,235,0.5)'
-                    : '1px solid rgba(37,99,235,0.15)',
-                }}
-              >
-                {plan.badge && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="px-4 py-1 rounded-full text-xs font-bold"
-                      style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }}>
-                      {plan.badge}
-                    </span>
-                  </div>
-                )}
-
-                <div className="mb-6">
-                  <h3 className="text-lg font-bold mb-1" style={{ color: plan.accent }}>{plan.name}</h3>
-                  <div className="flex items-baseline gap-1 mb-3">
-                    <span className="text-4xl font-bold" style={{ color: '#F8FAFC' }}>{plan.price}</span>
-                    <span className="text-sm" style={{ color: '#64748B' }}>{plan.period}</span>
-                  </div>
-                  <p className="text-sm leading-relaxed" style={{ color: '#94A3B8' }}>{plan.description}</p>
-                </div>
-
-                <ul className="space-y-3 mb-8 flex-1">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3 text-sm" style={{ color: '#94A3B8' }}>
-                      <span className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 text-xs mt-0.5"
-                        style={{ backgroundColor: `${plan.accent}20`, color: plan.accent }}>✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-
-                <Link
-                  href={plan.ctaHref}
-                  className="block text-center py-3.5 px-6 rounded-xl font-semibold text-sm transition-all hover:opacity-90"
-                  style={plan.highlighted
-                    ? { background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }
-                    : { backgroundColor: '#1B253B', color: '#94A3B8', border: '1px solid rgba(37,99,235,0.2)' }
-                  }
-                >
-                  {plan.cta}
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Pricing Cards (client component with billing toggle) */}
+      <PricingCards />
 
       {/* Comparison Table */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -204,12 +89,13 @@ export default function PricingPage() {
             {/* Header */}
             <div className="grid grid-cols-4 gap-4 p-4 border-b" style={{ borderColor: 'rgba(37,99,235,0.15)' }}>
               <div />
-              {['Starter', 'Pro', 'Agency'].map((name, i) => (
-                <div key={name} className="text-center">
-                  <span className={`text-sm font-bold`}
-                    style={{ color: i === 1 ? '#2563EB' : i === 2 ? '#22C55E' : '#3B82F6' }}>
-                    {name}
-                  </span>
+              {[
+                { label: 'Retail Core', color: '#3B82F6' },
+                { label: 'Kinetic', color: '#2563EB' },
+                { label: 'Prestige', color: '#22C55E' },
+              ].map(({ label, color }) => (
+                <div key={label} className="text-center">
+                  <span className="text-sm font-bold" style={{ color }}>{label}</span>
                 </div>
               ))}
             </div>
@@ -220,7 +106,7 @@ export default function PricingPage() {
                 style={{ backgroundColor: i % 2 === 0 ? 'transparent' : 'rgba(27,37,59,0.3)' }}
               >
                 <div className="text-sm" style={{ color: '#94A3B8' }}>{row.feature}</div>
-                {[row.starter, row.pro, row.agency].map((val, vi) => (
+                {[row.retail, row.kinetic, row.prestige].map((val, vi) => (
                   <div key={vi} className="text-center text-sm"
                     style={{ color: val === '✓' ? '#22C55E' : val === '—' ? '#1B253B' : '#F8FAFC' }}>
                     {val}
