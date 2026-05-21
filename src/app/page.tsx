@@ -93,9 +93,10 @@ export default function HomePage() {
             Reputation. On Autopilot.
           </h1>
           <p className="text-xl sm:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed" style={{ color: '#94A3B8' }}>
-            RepShield&apos;s AI drafts perfect responses to every Google review in seconds.
-            You review, approve, and publish — all in{' '}
-            <span style={{ color: '#22C55E' }} className="font-semibold">under 3 seconds</span>.
+            One bad review can tank your ratings and drive customers to competitors.
+            RepShield acts as a 24/7 barrier — instantly drafting flawless, fact-checked replies
+            so your brand never takes a{' '}
+            <span style={{ color: '#22C55E' }} className="font-semibold">public hit</span>.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <Link

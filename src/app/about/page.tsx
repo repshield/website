@@ -51,9 +51,11 @@ export default function AboutPage() {
           <div className="glass-card rounded-2xl p-8 sm:p-10">
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#F8FAFC' }}>Our Mission</h2>
             <p className="text-base leading-relaxed mb-4" style={{ color: '#94A3B8' }}>
-              We&apos;re building the operating system for online reputation management in India — starting
-              with Google reviews and expanding to every platform your customers use to talk about
-              your business.
+              One bad review or public mistake online can tank your hard-earned ratings and drive
+              customers straight to your competitors. RepShield acts as a 24/7 protective barrier
+              across Google Maps and beyond — automatically catching every mention, instantly
+              drafting flawless, fact-checked replies, and shielding your brand from public
+              reputation damage.
             </p>
             <p className="text-base leading-relaxed" style={{ color: '#94A3B8' }}>
               Our AI is trained to understand the nuance of your brand voice, the specifics of your
