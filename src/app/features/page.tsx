@@ -9,7 +9,14 @@ export const metadata: Metadata = {
 const coreModules = [
   {
     id: '01',
-    icon: '🧠',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 44 44" fill="none">
+        <circle cx="22" cy="22" r="14" fill="rgba(34,211,238,0.08)" stroke="#22d3ee" strokeWidth="1.5"/>
+        <circle cx="22" cy="18" r="3.5" stroke="#22d3ee" strokeWidth="1.5" fill="none"/>
+        <path d="M15 28c0-3.9 3.1-7 7-7h2.5" stroke="#22d3ee" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+        <path d="M27 23l3 3-3 3" stroke="#22d3ee" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
     title: 'Human-in-the-Loop AI Engine',
     tagline: 'Maximum control. Minimum effort.',
     description:
@@ -24,7 +31,17 @@ const coreModules = [
   },
   {
     id: '02',
-    icon: '🎛️',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 44 44" fill="none">
+        <circle cx="22" cy="22" r="14" fill="rgba(139,92,246,0.08)" stroke="#8b5cf6" strokeWidth="1.5"/>
+        <rect x="16" y="17" width="12" height="2" rx="1" fill="#8b5cf6" opacity={0.4}/>
+        <rect x="16" y="21" width="9" height="2" rx="1" fill="#8b5cf6" opacity={0.7}/>
+        <rect x="16" y="25" width="11" height="2" rx="1" fill="#8b5cf6"/>
+        <circle cx="29" cy="17" r="2.5" fill="rgba(139,92,246,0.3)" stroke="#8b5cf6" strokeWidth="1"/>
+        <line x1="29" y1="15.5" x2="29" y2="18.5" stroke="#8b5cf6" strokeWidth="1.2" strokeLinecap="round"/>
+        <line x1="27.5" y1="17" x2="30.5" y2="17" stroke="#8b5cf6" strokeWidth="1.2" strokeLinecap="round"/>
+      </svg>
+    ),
     title: 'Brand Personality Matrix',
     tagline: 'Your voice. Your rules.',
     description:
@@ -39,7 +56,15 @@ const coreModules = [
   },
   {
     id: '03',
-    icon: '📚',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 44 44" fill="none">
+        <circle cx="22" cy="22" r="14" fill="rgba(16,185,129,0.08)" stroke="#10b981" strokeWidth="1.5"/>
+        <rect x="16" y="15" width="12" height="14" rx="2" stroke="#10b981" strokeWidth="1.5" fill="none"/>
+        <path d="M19 19h6M19 22h6M19 25h4" stroke="#10b981" strokeWidth="1.2" strokeLinecap="round"/>
+        <circle cx="28" cy="28" r="4" fill="#060913" stroke="#10b981" strokeWidth="1.5"/>
+        <path d="M26.5 28l1 1 2-2" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
     title: 'The Fact Library',
     tagline: 'Zero hallucinations. 100% accuracy.',
     description:
@@ -64,73 +89,165 @@ const platformFeatures = [
     release: '1.0',
     status: 'live',
     platforms: [
-      { name: 'Google Business Profile', icon: '🗺️', detail: 'Full OAuth, real-time webhooks, live reply posting' },
-      { name: 'Slack Webhooks', icon: '💬', detail: 'Internal alerts channel for monitoring and testing' },
+      { name: 'Google Business Profile', icon: (
+        <svg width="20" height="20" viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="14" fill="rgba(59,158,255,0.08)" stroke="#3b9eff" strokeWidth="1.5"/>
+          <path d="M22 13c-3.3 0-6 2.7-6 6 0 4.5 6 12 6 12s6-7.5 6-12c0-3.3-2.7-6-6-6z" stroke="#3b9eff" strokeWidth="1.5" fill="none"/>
+          <circle cx="22" cy="19" r="2" fill="#3b9eff"/>
+        </svg>
+      ), detail: 'Full OAuth, real-time webhooks, live reply posting' },
+      { name: 'Slack Webhooks', icon: (
+        <svg width="20" height="20" viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="14" fill="rgba(34,211,238,0.08)" stroke="#22d3ee" strokeWidth="1.5"/>
+          <path d="M28 18H18a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h2v3l3-3h5a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2z" stroke="#22d3ee" strokeWidth="1.5" fill="none" strokeLinejoin="round"/>
+          <circle cx="19" cy="21.5" r=".8" fill="#22d3ee"/>
+          <circle cx="22" cy="21.5" r=".8" fill="#22d3ee"/>
+          <circle cx="25" cy="21.5" r=".8" fill="#22d3ee"/>
+        </svg>
+      ), detail: 'Internal alerts channel for monitoring and testing' },
     ],
   },
   {
     release: '2.0',
     status: 'coming',
     platforms: [
-      { name: 'Facebook Pages', icon: '👥', detail: 'Full Read/Write via Meta Graph API' },
-      { name: 'Yelp & TripAdvisor', icon: '⭐', detail: 'Read-only pipelines with mobile deep-linking' },
-      { name: 'WhatsApp Business', icon: '📱', detail: 'Active notifications & reply triggers via Twilio/Meta' },
+      { name: 'Facebook Pages', icon: (
+        <svg width="20" height="20" viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="14" fill="rgba(34,211,238,0.08)" stroke="#22d3ee" strokeWidth="1.5"/>
+          <path d="M24 14h-2c-2.2 0-4 1.8-4 4v2h-2v3h2v7h3v-7h2.5l.5-3H21v-2c0-.6.4-1 1-1h2v-3z" stroke="#22d3ee" strokeWidth="1.5" fill="none" strokeLinejoin="round"/>
+        </svg>
+      ), detail: 'Full Read/Write via Meta Graph API' },
+      { name: 'Yelp & TripAdvisor', icon: (
+        <svg width="20" height="20" viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="14" fill="rgba(239,68,68,0.08)" stroke="#ef4444" strokeWidth="1.5"/>
+          <path d="M22 13l1.5 4.5H28l-3.6 2.7 1.4 4.4-3.8-2.8-3.8 2.8 1.4-4.4L16 17.5h4.5z" stroke="#ef4444" strokeWidth="1.5" fill="none" strokeLinejoin="round"/>
+        </svg>
+      ), detail: 'Read-only pipelines with mobile deep-linking' },
+      { name: 'WhatsApp Business', icon: (
+        <svg width="20" height="20" viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="14" fill="rgba(16,185,129,0.08)" stroke="#10b981" strokeWidth="1.5"/>
+          <path d="M22 14c-4.4 0-8 3.6-8 8 0 1.4.4 2.8 1 3.9L14 30l4.2-1.1c1.1.6 2.4.9 3.8.9 4.4 0 8-3.6 8-8s-3.6-8-8-8z" stroke="#10b981" strokeWidth="1.5" fill="none" strokeLinejoin="round"/>
+          <path d="M19 20c.2.5.5 1 .9 1.5.9 1 2 1.8 3.3 2.1l.5.1 1.3-1.3c.1-.1.3-.2.5-.1l2.5 1.1c.2.1.3.3.2.5-.3 1.3-1.5 2.1-2.8 2-3.2-.5-5.7-3-6.2-6.2-.1-1.3.7-2.5 2-2.8.2 0 .4.1.5.2l1.1 2.5c.1.2 0 .4-.1.5L21.3 21l-.3-.3" stroke="#10b981" strokeWidth="1.2" fill="none" strokeLinecap="round"/>
+        </svg>
+      ), detail: 'Active notifications & reply triggers via Twilio/Meta' },
     ],
   },
   {
     release: '3.0',
     status: 'planned',
     platforms: [
-      { name: 'LinkedIn', icon: '💼', detail: 'Auto-repurpose 5-star reviews into social posts' },
+      { name: 'LinkedIn', icon: (
+        <svg width="20" height="20" viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="14" fill="rgba(139,92,246,0.08)" stroke="#8b5cf6" strokeWidth="1.5"/>
+          <rect x="15" y="15" width="6" height="6" rx="1.5" stroke="#8b5cf6" strokeWidth="1.5" fill="none"/>
+          <rect x="23" y="15" width="6" height="6" rx="1.5" stroke="#8b5cf6" strokeWidth="1.5" fill="none"/>
+          <rect x="15" y="23" width="6" height="6" rx="1.5" stroke="#8b5cf6" strokeWidth="1.5" fill="none"/>
+          <rect x="23" y="23" width="6" height="6" rx="1.5" stroke="#8b5cf6" strokeWidth="1.5" fill="none"/>
+        </svg>
+      ), detail: 'Auto-repurpose 5-star reviews into social posts' },
     ],
   },
 ];
 
 const mobileFeatures = [
   {
-    icon: '📲',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+        <circle cx="22" cy="22" r="14" fill="rgba(34,211,238,0.08)" stroke="#22d3ee" strokeWidth="1.5"/>
+        <path d="M16 22l3 3 7-7" stroke="#22d3ee" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M24 28l5-3" stroke="#22d3ee" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.5"/>
+      </svg>
+    ),
     title: '3-Second Swipe Approval',
     description: 'Push notifications via Firebase Cloud Messaging. Tap the alert, see a split-screen view, swipe right to publish the AI draft instantly.',
-    accent: '#22C55E',
+    accent: '#22d3ee',
   },
   {
-    icon: '💬',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+        <circle cx="22" cy="22" r="14" fill="rgba(16,185,129,0.08)" stroke="#10b981" strokeWidth="1.5"/>
+        <path d="M22 14c-4.4 0-8 3.6-8 8 0 1.4.4 2.8 1 3.9L14 30l4.2-1.1c1.1.6 2.4.9 3.8.9 4.4 0 8-3.6 8-8s-3.6-8-8-8z" stroke="#10b981" strokeWidth="1.5" fill="none" strokeLinejoin="round"/>
+        <path d="M19 20c.2.5.5 1 .9 1.5.9 1 2 1.8 3.3 2.1l.5.1 1.3-1.3c.1-.1.3-.2.5-.1l2.5 1.1c.2.1.3.3.2.5-.3 1.3-1.5 2.1-2.8 2-3.2-.5-5.7-3-6.2-6.2-.1-1.3.7-2.5 2-2.8.2 0 .4.1.5.2l1.1 2.5c.1.2 0 .4-.1.5L21.3 21l-.3-.3" stroke="#10b981" strokeWidth="1.2" fill="none" strokeLinecap="round"/>
+      </svg>
+    ),
     title: 'WhatsApp Post-on-the-Go Bot',
     description: 'The system texts you the review and draft. Reply "1" to publish live. Reply with custom text to override the draft. Dead simple.',
-    accent: '#22C55E',
+    accent: '#10b981',
   },
   {
-    icon: '📋',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+        <circle cx="22" cy="22" r="14" fill="rgba(245,158,11,0.08)" stroke="#f59e0b" strokeWidth="1.5"/>
+        <path d="M25.5 15.5l3 3-9 9H16.5v-3l9-9z" stroke="#f59e0b" strokeWidth="1.5" fill="none" strokeLinejoin="round"/>
+        <path d="M23 18l3 3" stroke="#f59e0b" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+      </svg>
+    ),
     title: 'Yelp Clipboard Bridge',
     description: 'One tap auto-copies the AI draft to your clipboard and launches the Yelp app directly to the target review. No switching required.',
-    accent: '#2563EB',
+    accent: '#f59e0b',
   },
   {
-    icon: '🔔',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+        <circle cx="22" cy="22" r="14" fill="rgba(245,158,11,0.08)" stroke="#f59e0b" strokeWidth="1.5"/>
+        <path d="M22 13c-4 0-6 2.7-6 5.5V23l-1.5 2h15l-1.5-2v-4.5c0-2.8-2-5.5-6-5.5z" stroke="#f59e0b" strokeWidth="1.5" fill="none" strokeLinejoin="round"/>
+        <path d="M20 25c0 1.1.9 2 2 2s2-.9 2-2" stroke="#f59e0b" strokeWidth="1.5" fill="none"/>
+        <circle cx="28" cy="14" r="3" fill="#ef4444" stroke="#060913" strokeWidth="1.5"/>
+      </svg>
+    ),
     title: 'Flutter Cross-Platform App',
     description: 'Lightweight native iOS/Android client engineered solely for fast, on-the-go review approvals. Minimal UI, maximum speed.',
-    accent: '#3B82F6',
+    accent: '#f59e0b',
   },
 ];
 
 const agencyFeatures = [
   {
-    icon: '🏢',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 44 44" fill="none">
+        <circle cx="22" cy="22" r="14" fill="rgba(59,158,255,0.08)" stroke="#3b9eff" strokeWidth="1.5"/>
+        <rect x="18" y="15" width="8" height="6" rx="1.5" stroke="#3b9eff" strokeWidth="1.5" fill="none"/>
+        <rect x="13" y="23" width="7" height="5" rx="1.5" stroke="#3b9eff" strokeWidth="1.2" fill="none"/>
+        <rect x="24" y="23" width="7" height="5" rx="1.5" stroke="#3b9eff" strokeWidth="1.2" fill="none"/>
+        <path d="M22 21v3M17 23V22h10v1" stroke="#3b9eff" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
     title: 'Agency Command Center',
     description: 'Multi-tenant parent console for agency account executives. Manage and toggle between dozens of separate client accounts from one login.',
   },
   {
-    icon: '🏷️',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 44 44" fill="none">
+        <circle cx="22" cy="22" r="14" fill="rgba(59,158,255,0.08)" stroke="#3b9eff" strokeWidth="1.5"/>
+        <rect x="15" y="17" width="14" height="10" rx="2" stroke="#3b9eff" strokeWidth="1.5" fill="none"/>
+        <path d="M18 21h8M18 24h5" stroke="#3b9eff" strokeWidth="1.2" fill="none" strokeLinecap="round"/>
+        <circle cx="29" cy="15" r="3.5" fill="#060913" stroke="#3b9eff" strokeWidth="1.5"/>
+        <path d="M28 15l.8.8 1.5-1.5" stroke="#3b9eff" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
     title: 'Full White-Label Engine',
     description: 'Dynamic domain mapping (reviews.youragency.com), custom branding asset injections, and theme styling configurations.',
   },
   {
-    icon: '📍',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 44 44" fill="none">
+        <circle cx="22" cy="22" r="14" fill="rgba(34,211,238,0.08)" stroke="#22d3ee" strokeWidth="1.5"/>
+        <path d="M14 28l5-5 4 3 5-7" stroke="#22d3ee" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="28" cy="19" r="2" fill="#22d3ee"/>
+      </svg>
+    ),
     title: 'Local Map Pack Rank Tracker',
     description: 'Automated cron jobs that track and log local Google Maps keyword positions over time. Prove RepShield\'s ROI with hard numbers.',
   },
   {
-    icon: '📱',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 44 44" fill="none">
+        <circle cx="22" cy="22" r="14" fill="rgba(245,158,11,0.08)" stroke="#f59e0b" strokeWidth="1.5"/>
+        <path d="M22 13c-4 0-6 2.7-6 5.5V23l-1.5 2h15l-1.5-2v-4.5c0-2.8-2-5.5-6-5.5z" stroke="#f59e0b" strokeWidth="1.5" fill="none" strokeLinejoin="round"/>
+        <path d="M20 25c0 1.1.9 2 2 2s2-.9 2-2" stroke="#f59e0b" strokeWidth="1.5" fill="none"/>
+        <circle cx="28" cy="14" r="3" fill="#ef4444" stroke="#060913" strokeWidth="1.5"/>
+      </svg>
+    ),
     title: 'NFC / QR Review Kit',
     description: 'Dynamic generation of customer-facing QR codes and physical asset templates designed to maximize review acquisition volume.',
   },
@@ -168,7 +285,7 @@ export default function FeaturesPage() {
               <div key={mod.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${i % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
                 <div className={i % 2 === 1 ? 'lg:col-start-2' : ''}>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xl"
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center"
                       style={{ backgroundColor: `${mod.accent}20` }}>
                       {mod.icon}
                     </div>
@@ -246,7 +363,7 @@ export default function FeaturesPage() {
                   {release.platforms.map((p) => (
                     <div key={p.name}>
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-lg">{p.icon}</span>
+                        <span>{p.icon}</span>
                         <span className="text-sm font-medium" style={{ color: '#F8FAFC' }}>{p.name}</span>
                       </div>
                       <p className="text-xs pl-7" style={{ color: '#64748B' }}>{p.detail}</p>
@@ -271,7 +388,7 @@ export default function FeaturesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {mobileFeatures.map((f) => (
               <div key={f.title} className="glass-card rounded-2xl p-6">
-                <div className="text-3xl mb-4 w-12 h-12 rounded-xl flex items-center justify-center"
+                <div className="mb-4 w-12 h-12 rounded-xl flex items-center justify-center"
                   style={{ backgroundColor: `${f.accent}20` }}>
                   {f.icon}
                 </div>
@@ -295,7 +412,7 @@ export default function FeaturesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {agencyFeatures.map((f) => (
               <div key={f.title} className="glass-card rounded-2xl p-6 text-center">
-                <div className="text-3xl mb-4 mx-auto w-12 h-12 rounded-xl flex items-center justify-center"
+                <div className="mb-4 mx-auto w-12 h-12 rounded-xl flex items-center justify-center"
                   style={{ backgroundColor: 'rgba(37,99,235,0.15)' }}>
                   {f.icon}
                 </div>
