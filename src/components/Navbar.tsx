@@ -136,113 +136,169 @@ export default function Navbar() {
                 </svg>
               </button>
 
-              {/* Mega Dropdown Panel */}
+              {/* Full-width Mega Dropdown Panel */}
               <div
                 onMouseEnter={openDropdown}
                 onMouseLeave={scheduleClose}
                 style={{
                   position: 'fixed',
                   top: '64px',
-                  left: '50%',
-                  transform: dropdownOpen
-                    ? 'translateX(-50%) translateY(0)'
-                    : 'translateX(-50%) translateY(-10px)',
+                  left: 0,
+                  right: 0,
+                  width: '100%',
                   opacity: dropdownOpen ? 1 : 0,
+                  transform: dropdownOpen ? 'translateY(0)' : 'translateY(-8px)',
                   pointerEvents: dropdownOpen ? 'auto' : 'none',
-                  transition: 'opacity 0.28s cubic-bezier(0.16,1,0.3,1), transform 0.28s cubic-bezier(0.16,1,0.3,1)',
-                  width: 'min(820px, 96vw)',
-                  backgroundColor: '#0D1628',
-                  border: '1px solid rgba(37,99,235,0.2)',
-                  borderRadius: '16px',
-                  padding: '24px',
-                  boxShadow: '0 24px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(37,99,235,0.1)',
+                  transition: 'opacity 0.3s cubic-bezier(0.16,1,0.3,1), transform 0.3s cubic-bezier(0.16,1,0.3,1)',
+                  backgroundColor: 'rgba(9,14,26,0.97)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                  borderTop: '1px solid rgba(37,99,235,0.15)',
+                  borderBottom: '1px solid rgba(37,99,235,0.15)',
+                  boxShadow: '0 32px 80px rgba(0,0,0,0.7)',
                   zIndex: 9999,
                 }}
               >
-                {/* Header row */}
-                <div className="flex items-center justify-between mb-4 pb-3"
-                  style={{ borderBottom: '1px solid rgba(37,99,235,0.12)' }}>
-                  <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#475569' }}>
-                    Works for every business type
-                  </span>
-                  <span className="text-xs px-2 py-0.5 rounded-full font-semibold"
-                    style={{ backgroundColor: 'rgba(37,99,235,0.12)', color: '#3b82f6' }}>
-                    7 verticals · 50+ types
-                  </span>
-                </div>
+                <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '32px 32px 28px', display: 'flex', gap: '0' }}>
 
-                {/* Categories Grid */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-                  {businessCategories.map((cat, i) => (
-                    <div
-                      key={cat.id}
-                      onMouseEnter={() => setHoveredCategory(cat.id)}
-                      onMouseLeave={() => setHoveredCategory(null)}
-                      style={{
-                        borderRadius: '10px',
-                        padding: '12px',
-                        backgroundColor: hoveredCategory === cat.id ? 'rgba(37,99,235,0.08)' : 'transparent',
-                        border: `1px solid ${hoveredCategory === cat.id ? 'rgba(37,99,235,0.25)' : 'transparent'}`,
-                        transition: 'background-color 0.18s ease, border-color 0.18s ease',
-                        cursor: 'default',
-                        // stagger entrance
-                        animation: dropdownOpen ? `fadeInUp 0.4s cubic-bezier(0.16,1,0.3,1) ${i * 35}ms both` : 'none',
-                      }}
-                    >
-                      <div className="flex items-center gap-2 mb-2">
-                        <span style={{ fontSize: '15px', lineHeight: 1 }}>{cat.emoji}</span>
-                        <span className="text-xs font-semibold" style={{ color: '#F8FAFC' }}>{cat.label}</span>
-                      </div>
-                      <div className="flex flex-wrap gap-1">
-                        {cat.types.slice(0, 4).map((type) => (
-                          <span key={type}
-                            className="text-xs px-1.5 py-0.5 rounded"
-                            style={{
-                              backgroundColor: `${cat.color}14`,
-                              color: cat.color,
-                              fontSize: '10px',
-                              fontWeight: 500,
-                              transition: 'background-color 0.15s ease',
-                            }}
-                          >
-                            {type}
-                          </span>
-                        ))}
-                        {cat.types.length > 4 && (
-                          <span className="text-xs px-1.5 py-0.5 rounded"
-                            style={{ backgroundColor: 'rgba(100,116,139,0.12)', color: '#64748b', fontSize: '10px' }}>
-                            +{cat.types.length - 4} more
-                          </span>
+                  {/* Left sidebar — category list */}
+                  <div style={{ width: '220px', flexShrink: 0, borderRight: '1px solid rgba(37,99,235,0.1)', paddingRight: '24px', marginRight: '28px' }}>
+                    <div className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: '#475569' }}>
+                      Industries
+                    </div>
+                    {businessCategories.map((cat, i) => (
+                      <button
+                        key={cat.id}
+                        onMouseEnter={() => setHoveredCategory(cat.id)}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '10px',
+                          width: '100%',
+                          padding: '8px 12px',
+                          borderRadius: '8px',
+                          backgroundColor: hoveredCategory === cat.id ? `${cat.color}14` : 'transparent',
+                          border: `1px solid ${hoveredCategory === cat.id ? `${cat.color}30` : 'transparent'}`,
+                          cursor: 'default',
+                          transition: 'background-color 0.15s ease, border-color 0.15s ease',
+                          animation: dropdownOpen ? `fadeInUp 0.35s cubic-bezier(0.16,1,0.3,1) ${i * 30}ms both` : 'none',
+                          textAlign: 'left',
+                        }}
+                      >
+                        <span style={{ fontSize: '16px', lineHeight: 1, flexShrink: 0 }}>{cat.emoji}</span>
+                        <span style={{
+                          fontSize: '13px',
+                          fontWeight: 500,
+                          color: hoveredCategory === cat.id ? '#F8FAFC' : '#94A3B8',
+                          transition: 'color 0.15s ease',
+                        }}>
+                          {cat.label}
+                        </span>
+                        {hoveredCategory === cat.id && (
+                          <svg style={{ marginLeft: 'auto', flexShrink: 0 }} width="14" height="14" fill="none" stroke={cat.color} viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 18l6-6-6-6" />
+                          </svg>
                         )}
-                      </div>
-                    </div>
-                  ))}
+                      </button>
+                    ))}
+                  </div>
 
-                  {/* CTA tile */}
-                  <div style={{
-                    borderRadius: '10px',
-                    padding: '12px',
-                    background: 'linear-gradient(135deg, rgba(37,99,235,0.18), rgba(59,130,246,0.12))',
-                    border: '1px solid rgba(37,99,235,0.3)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    animation: dropdownOpen ? `fadeInUp 0.4s cubic-bezier(0.16,1,0.3,1) ${7 * 35}ms both` : 'none',
-                  }}>
-                    <div>
-                      <div className="text-xs font-semibold mb-1" style={{ color: '#F8FAFC' }}>Your category</div>
-                      <div style={{ color: '#94A3B8', fontSize: '11px', lineHeight: 1.5 }}>
-                        Don&apos;t see your niche? RepShield works for any Google-listed business.
+                  {/* Right panel — types for selected category */}
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    {businessCategories.map((cat) => {
+                      const active = hoveredCategory === cat.id;
+                      return (
+                        <div key={cat.id} style={{
+                          display: active ? 'block' : 'none',
+                          animation: active ? 'fadeInUp 0.25s cubic-bezier(0.16,1,0.3,1) both' : 'none',
+                        }}>
+                          {/* Category header */}
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
+                            <span style={{ fontSize: '22px' }}>{cat.emoji}</span>
+                            <div>
+                              <div style={{ fontSize: '16px', fontWeight: 700, color: '#F8FAFC' }}>{cat.label}</div>
+                              <div style={{ fontSize: '12px', color: '#475569', marginTop: '2px' }}>
+                                {cat.types.length} business types supported
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Types grid */}
+                          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
+                            {cat.types.map((type, ti) => (
+                              <span key={type} style={{
+                                padding: '6px 12px',
+                                borderRadius: '20px',
+                                backgroundColor: `${cat.color}12`,
+                                border: `1px solid ${cat.color}28`,
+                                color: cat.color,
+                                fontSize: '12px',
+                                fontWeight: 500,
+                                animation: active ? `fadeInUp 0.3s cubic-bezier(0.16,1,0.3,1) ${ti * 20}ms both` : 'none',
+                              }}>
+                                {type}
+                              </span>
+                            ))}
+                          </div>
+
+                          {/* CTA row */}
+                          <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                            paddingTop: '16px',
+                            borderTop: '1px solid rgba(37,99,235,0.1)',
+                          }}>
+                            <span style={{ fontSize: '12px', color: '#64748B' }}>
+                              RepShield works for any Google-listed business — AI-powered responses in seconds.
+                            </span>
+                            <Link
+                              href="/#waitlist"
+                              onClick={() => setDropdownOpen(false)}
+                              style={{
+                                flexShrink: 0,
+                                marginLeft: '24px',
+                                padding: '8px 20px',
+                                borderRadius: '8px',
+                                background: 'linear-gradient(135deg, #2563EB, #3B82F6)',
+                                color: '#F8FAFC',
+                                fontSize: '12px',
+                                fontWeight: 600,
+                                textDecoration: 'none',
+                                whiteSpace: 'nowrap',
+                              }}
+                            >
+                              Get Early Access →
+                            </Link>
+                          </div>
+                        </div>
+                      );
+                    })}
+
+                    {/* Default state — no category hovered */}
+                    {!hoveredCategory && (
+                      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%', paddingTop: '8px' }}>
+                        <div style={{ fontSize: '14px', color: '#475569', marginBottom: '16px' }}>
+                          Hover a category to explore business types →
+                        </div>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                          {businessCategories.map((cat, i) => (
+                            <span key={cat.id} style={{
+                              padding: '5px 10px',
+                              borderRadius: '16px',
+                              backgroundColor: `${cat.color}10`,
+                              border: `1px solid ${cat.color}22`,
+                              color: cat.color,
+                              fontSize: '11px',
+                              fontWeight: 500,
+                              animation: dropdownOpen ? `fadeInUp 0.35s cubic-bezier(0.16,1,0.3,1) ${i * 25}ms both` : 'none',
+                            }}>
+                              {cat.emoji} {cat.label}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                    <Link
-                      href="/#waitlist"
-                      onClick={() => setDropdownOpen(false)}
-                      className="mt-3 inline-block text-center text-xs font-semibold px-3 py-1.5 rounded-lg"
-                      style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }}
-                    >
-                      Get Early Access →
-                    </Link>
+                    )}
                   </div>
                 </div>
               </div>
