@@ -35,7 +35,7 @@ export default function AboutPage() {
         />
         <div className="max-w-3xl mx-auto relative z-10">
           <h1 className="text-5xl sm:text-6xl font-bold mb-6" style={{ color: '#F8FAFC' }}>
-            About <span className="gradient-text">RepShield</span>
+            About <span className="gradient-text">Reputation Shield</span>
           </h1>
           <p className="text-xl leading-relaxed" style={{ color: '#94A3B8' }}>
             RepShield was built from a simple observation: Indian business owners spend hours every
