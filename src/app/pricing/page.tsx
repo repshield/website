@@ -26,7 +26,7 @@ const plans = [
     cta: 'Start Free Trial',
     ctaHref: '#',
     highlighted: false,
-    accent: '#4F46E5',
+    accent: '#3B82F6',
   },
   {
     name: 'Pro',
@@ -47,7 +47,7 @@ const plans = [
     cta: 'Start Free Trial',
     ctaHref: '#',
     highlighted: true,
-    accent: '#8B5CF6',
+    accent: '#2563EB',
   },
   {
     name: 'Agency',
@@ -68,7 +68,7 @@ const plans = [
     cta: 'Contact Sales',
     ctaHref: '#',
     highlighted: false,
-    accent: '#06B6D4',
+    accent: '#22C55E',
   },
 ];
 
@@ -116,11 +116,11 @@ const comparisonFeatures = [
 
 export default function PricingPage() {
   return (
-    <div style={{ backgroundColor: '#090D16' }}>
+    <div style={{ backgroundColor: '#060913' }}>
       {/* Hero */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at top, #8B5CF6 0%, transparent 60%)' }} />
+          style={{ background: 'radial-gradient(ellipse at top, #2563EB 0%, transparent 60%)' }} />
         <div className="max-w-3xl mx-auto relative z-10">
           <h1 className="text-5xl sm:text-6xl font-bold mb-6" style={{ color: '#F8FAFC' }}>
             Simple, <span className="gradient-text">transparent</span> pricing
@@ -128,8 +128,8 @@ export default function PricingPage() {
           <p className="text-xl mb-4" style={{ color: '#94A3B8' }}>
             No hidden fees. No per-response charges. Flat monthly pricing that scales with your business.
           </p>
-          <div className="flex items-center justify-center gap-2 text-sm" style={{ color: '#06B6D4' }}>
-            <span className="w-2 h-2 rounded-full" style={{ backgroundColor: '#06B6D4' }} />
+          <div className="flex items-center justify-center gap-2 text-sm" style={{ color: '#22C55E' }}>
+            <span className="w-2 h-2 rounded-full" style={{ backgroundColor: '#22C55E' }} />
             14-day free trial on all plans — no credit card required
           </div>
         </div>
@@ -142,18 +142,18 @@ export default function PricingPage() {
             {plans.map((plan) => (
               <div
                 key={plan.name}
-                className={`relative rounded-2xl p-8 flex flex-col ${plan.highlighted ? 'glow-violet' : ''}`}
+                className={`relative rounded-2xl p-8 flex flex-col ${plan.highlighted ? 'shield-glow' : ''}`}
                 style={{
-                  backgroundColor: plan.highlighted ? 'rgba(19,27,46,0.9)' : '#131B2E',
+                  backgroundColor: plan.highlighted ? 'rgba(19,27,46,0.9)' : '#0F1626',
                   border: plan.highlighted
-                    ? '1px solid rgba(139,92,246,0.5)'
-                    : '1px solid rgba(139,92,246,0.15)',
+                    ? '1px solid rgba(37,99,235,0.5)'
+                    : '1px solid rgba(37,99,235,0.15)',
                 }}
               >
                 {plan.badge && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                     <span className="px-4 py-1 rounded-full text-xs font-bold"
-                      style={{ background: 'linear-gradient(135deg, #8B5CF6, #4F46E5)', color: '#F8FAFC' }}>
+                      style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }}>
                       {plan.badge}
                     </span>
                   </div>
@@ -182,8 +182,8 @@ export default function PricingPage() {
                   href={plan.ctaHref}
                   className="block text-center py-3.5 px-6 rounded-xl font-semibold text-sm transition-all hover:opacity-90"
                   style={plan.highlighted
-                    ? { background: 'linear-gradient(135deg, #8B5CF6, #4F46E5)', color: '#F8FAFC' }
-                    : { backgroundColor: '#1E293B', color: '#94A3B8', border: '1px solid rgba(139,92,246,0.2)' }
+                    ? { background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }
+                    : { backgroundColor: '#1B253B', color: '#94A3B8', border: '1px solid rgba(37,99,235,0.2)' }
                   }
                 >
                   {plan.cta}
@@ -202,12 +202,12 @@ export default function PricingPage() {
           </h2>
           <div className="glass-card rounded-2xl overflow-hidden">
             {/* Header */}
-            <div className="grid grid-cols-4 gap-4 p-4 border-b" style={{ borderColor: 'rgba(139,92,246,0.15)' }}>
+            <div className="grid grid-cols-4 gap-4 p-4 border-b" style={{ borderColor: 'rgba(37,99,235,0.15)' }}>
               <div />
               {['Starter', 'Pro', 'Agency'].map((name, i) => (
                 <div key={name} className="text-center">
                   <span className={`text-sm font-bold`}
-                    style={{ color: i === 1 ? '#8B5CF6' : i === 2 ? '#06B6D4' : '#4F46E5' }}>
+                    style={{ color: i === 1 ? '#2563EB' : i === 2 ? '#22C55E' : '#3B82F6' }}>
                     {name}
                   </span>
                 </div>
@@ -217,12 +217,12 @@ export default function PricingPage() {
               <div
                 key={row.feature}
                 className="grid grid-cols-4 gap-4 px-4 py-3"
-                style={{ backgroundColor: i % 2 === 0 ? 'transparent' : 'rgba(30,41,59,0.3)' }}
+                style={{ backgroundColor: i % 2 === 0 ? 'transparent' : 'rgba(27,37,59,0.3)' }}
               >
                 <div className="text-sm" style={{ color: '#94A3B8' }}>{row.feature}</div>
                 {[row.starter, row.pro, row.agency].map((val, vi) => (
                   <div key={vi} className="text-center text-sm"
-                    style={{ color: val === '✓' ? '#06B6D4' : val === '—' ? '#334155' : '#F8FAFC' }}>
+                    style={{ color: val === '✓' ? '#22C55E' : val === '—' ? '#1B253B' : '#F8FAFC' }}>
                     {val}
                   </div>
                 ))}
@@ -233,7 +233,7 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#0D1422' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#0B1120' }}>
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center" style={{ color: '#F8FAFC' }}>
             Frequently asked questions
@@ -260,13 +260,13 @@ export default function PricingPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="mailto:hello@repshield.live"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition-all glow-violet"
-              style={{ background: 'linear-gradient(135deg, #8B5CF6, #4F46E5)', color: '#F8FAFC' }}>
+              className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition-all shield-glow"
+              style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }}>
               Contact Sales
             </a>
             <Link href="/features"
               className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold border transition-colors"
-              style={{ borderColor: 'rgba(139,92,246,0.3)', color: '#94A3B8' }}>
+              style={{ borderColor: 'rgba(37,99,235,0.3)', color: '#94A3B8' }}>
               View All Features
             </Link>
           </div>

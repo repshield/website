@@ -20,7 +20,7 @@ export default function Navbar() {
         backgroundColor: 'rgba(9, 13, 22, 0.85)',
         backdropFilter: 'blur(16px)',
         WebkitBackdropFilter: 'blur(16px)',
-        borderColor: 'rgba(139, 92, 246, 0.15)',
+        borderColor: 'rgba(37, 99, 235, 0.15)',
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,7 +29,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-2 group">
             <div
               className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm"
-              style={{ background: 'linear-gradient(135deg, #8B5CF6, #4F46E5)' }}
+              style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)' }}
             >
               RS
             </div>
@@ -47,7 +47,7 @@ export default function Navbar() {
                 className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
                 style={{
                   color: pathname === link.href ? '#F8FAFC' : '#94A3B8',
-                  backgroundColor: pathname === link.href ? 'rgba(139, 92, 246, 0.15)' : 'transparent',
+                  backgroundColor: pathname === link.href ? 'rgba(37, 99, 235, 0.15)' : 'transparent',
                 }}
               >
                 {link.label}
@@ -67,7 +67,7 @@ export default function Navbar() {
             <Link
               href="/pricing"
               className="text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 hover:opacity-90"
-              style={{ background: 'linear-gradient(135deg, #8B5CF6, #4F46E5)', color: '#F8FAFC' }}
+              style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }}
             >
               Start Free Trial
             </Link>
@@ -96,8 +96,8 @@ export default function Navbar() {
         <div
           className="md:hidden border-t px-4 py-4 flex flex-col gap-2"
           style={{
-            backgroundColor: '#131B2E',
-            borderColor: 'rgba(139, 92, 246, 0.15)',
+            backgroundColor: '#0F1626',
+            borderColor: 'rgba(37, 99, 235, 0.15)',
           }}
         >
           {navLinks.map((link) => (
@@ -108,7 +108,7 @@ export default function Navbar() {
               className="px-4 py-3 rounded-lg text-sm font-medium"
               style={{
                 color: pathname === link.href ? '#F8FAFC' : '#94A3B8',
-                backgroundColor: pathname === link.href ? 'rgba(139, 92, 246, 0.15)' : 'transparent',
+                backgroundColor: pathname === link.href ? 'rgba(37, 99, 235, 0.15)' : 'transparent',
               }}
             >
               {link.label}
@@ -118,7 +118,7 @@ export default function Navbar() {
             href="/pricing"
             onClick={() => setMenuOpen(false)}
             className="mt-2 text-center text-sm font-semibold px-5 py-3 rounded-lg"
-            style={{ background: 'linear-gradient(135deg, #8B5CF6, #4F46E5)', color: '#F8FAFC' }}
+            style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }}
           >
             Start Free Trial
           </Link>

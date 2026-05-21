@@ -12,37 +12,37 @@ const features = [
     icon: '🧠',
     title: 'Human-in-the-Loop AI',
     description: 'Our AI drafts the perfect response, you approve in under 3 seconds. Maximum brand control with minimal effort.',
-    accent: '#8B5CF6',
+    accent: '#2563EB',
   },
   {
     icon: '🎛️',
     title: 'Brand Personality Matrix',
     description: 'Set your tone, length, and wit via simple sliders. No prompt engineering needed — just drag and go.',
-    accent: '#4F46E5',
+    accent: '#3B82F6',
   },
   {
     icon: '📚',
     title: 'Fact Library',
     description: 'Feed RepShield your business truths — pricing, hours, contacts. Zero hallucinations, 100% accurate responses.',
-    accent: '#8B5CF6',
+    accent: '#2563EB',
   },
   {
     icon: '⚡',
     title: '3-Second Swipe Approval',
     description: 'Push notifications with split-screen review. Swipe right to publish, swipe left to edit. Done from your phone.',
-    accent: '#06B6D4',
+    accent: '#22C55E',
   },
   {
     icon: '🏢',
     title: 'Agency Command Center',
     description: 'Manage dozens of client accounts from one dashboard. White-label ready with custom domain mapping.',
-    accent: '#4F46E5',
+    accent: '#3B82F6',
   },
   {
     icon: '📊',
     title: 'Local SEO Rank Tracker',
     description: 'Automated tracking of your Google Maps keyword positions over time. Prove ROI with hard data.',
-    accent: '#06B6D4',
+    accent: '#22C55E',
   },
 ];
 
@@ -74,17 +74,17 @@ const steps = [
 
 export default function HomePage() {
   return (
-    <div style={{ backgroundColor: '#090D16' }}>
+    <div style={{ backgroundColor: '#060913' }}>
       {/* Hero */}
       <section className="relative overflow-hidden pt-20 pb-32 px-4 sm:px-6 lg:px-8">
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full opacity-10 blur-3xl pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #8B5CF6 0%, #4F46E5 50%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, #2563EB 0%, #3B82F6 50%, transparent 70%)' }}
         />
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold mb-8 border"
-            style={{ backgroundColor: 'rgba(139, 92, 246, 0.1)', borderColor: 'rgba(139, 92, 246, 0.3)', color: '#8B5CF6' }}>
-            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#8B5CF6' }} />
+            style={{ backgroundColor: 'rgba(37, 99, 235, 0.1)', borderColor: 'rgba(37, 99, 235, 0.3)', color: '#2563EB' }}>
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#2563EB' }} />
             Now in Beta — Google Maps First
           </div>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight" style={{ color: '#F8FAFC' }}>
@@ -96,20 +96,20 @@ export default function HomePage() {
           <p className="text-xl sm:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed" style={{ color: '#94A3B8' }}>
             RepShield&apos;s AI drafts perfect responses to every Google review in seconds.
             You review, approve, and publish — all in{' '}
-            <span style={{ color: '#06B6D4' }} className="font-semibold">under 3 seconds</span>.
+            <span style={{ color: '#22C55E' }} className="font-semibold">under 3 seconds</span>.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <Link
               href="/pricing"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-base transition-all duration-200 hover:opacity-90 hover:scale-105 glow-violet"
-              style={{ background: 'linear-gradient(135deg, #8B5CF6, #4F46E5)', color: '#F8FAFC' }}
+              className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-base transition-all duration-200 hover:opacity-90 hover:scale-105 shield-glow"
+              style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }}
             >
               Start Free Trial — No Credit Card
             </Link>
             <Link
               href="/features"
               className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-base transition-all duration-200 border flex items-center justify-center gap-2"
-              style={{ backgroundColor: '#131B2E', borderColor: 'rgba(139, 92, 246, 0.3)', color: '#94A3B8' }}
+              style={{ backgroundColor: '#0F1626', borderColor: 'rgba(37, 99, 235, 0.3)', color: '#94A3B8' }}
             >
               See All Features →
             </Link>
@@ -129,30 +129,30 @@ export default function HomePage() {
                 { stars: 1, name: 'James K.', time: '15m ago', text: 'Waited 45 minutes and the food was cold when it arrived...', published: false, draft: 'We sincerely apologize for your experience, James...' },
                 { stars: 4, name: 'Maria L.', time: '1h ago', text: 'Great atmosphere and friendly staff. Will definitely return...', published: false, draft: 'Thank you for the kind words, Maria! We look forward...' },
               ].map((review, i) => (
-                <div key={i} className="rounded-xl p-4 flex flex-col sm:flex-row sm:items-start gap-4" style={{ backgroundColor: '#1E293B' }}>
+                <div key={i} className="rounded-xl p-4 flex flex-col sm:flex-row sm:items-start gap-4" style={{ backgroundColor: '#1B253B' }}>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
                       <span className="font-semibold text-sm" style={{ color: '#F8FAFC' }}>{review.name}</span>
                       <span className="text-xs" style={{ color: '#64748B' }}>{review.time}</span>
                       <div className="flex gap-0.5">
                         {Array.from({ length: 5 }).map((_, s) => (
-                          <span key={s} className="text-xs" style={{ color: s < review.stars ? '#F59E0B' : '#334155' }}>★</span>
+                          <span key={s} className="text-xs" style={{ color: s < review.stars ? '#F59E0B' : '#1B253B' }}>★</span>
                         ))}
                       </div>
                     </div>
                     <p className="text-sm truncate" style={{ color: '#94A3B8' }}>{review.text}</p>
                     <div className="mt-2 flex items-start gap-2">
-                      <span className="text-xs rounded px-2 py-0.5 font-medium mt-0.5 shrink-0" style={{ backgroundColor: 'rgba(139, 92, 246, 0.15)', color: '#8B5CF6' }}>AI Draft</span>
+                      <span className="text-xs rounded px-2 py-0.5 font-medium mt-0.5 shrink-0" style={{ backgroundColor: 'rgba(37, 99, 235, 0.15)', color: '#2563EB' }}>AI Draft</span>
                       <p className="text-xs italic truncate" style={{ color: '#64748B' }}>{review.draft}</p>
                     </div>
                   </div>
                   <div className="flex gap-2 shrink-0">
                     {review.published ? (
-                      <span className="px-3 py-1.5 rounded-lg text-xs font-semibold" style={{ backgroundColor: 'rgba(6, 182, 212, 0.15)', color: '#06B6D4' }}>✓ Published</span>
+                      <span className="px-3 py-1.5 rounded-lg text-xs font-semibold" style={{ backgroundColor: 'rgba(34, 197, 94, 0.15)', color: '#22C55E' }}>✓ Published</span>
                     ) : (
                       <>
-                        <button className="px-3 py-1.5 rounded-lg text-xs font-semibold" style={{ backgroundColor: 'rgba(139, 92, 246, 0.2)', color: '#8B5CF6' }}>✓ Approve</button>
-                        <button className="px-3 py-1.5 rounded-lg text-xs font-semibold" style={{ backgroundColor: 'rgba(30, 41, 59, 0.8)', color: '#64748B' }}>Edit</button>
+                        <button className="px-3 py-1.5 rounded-lg text-xs font-semibold" style={{ backgroundColor: 'rgba(37, 99, 235, 0.2)', color: '#2563EB' }}>✓ Approve</button>
+                        <button className="px-3 py-1.5 rounded-lg text-xs font-semibold" style={{ backgroundColor: 'rgba(27, 37, 59, 0.8)', color: '#64748B' }}>Edit</button>
                       </>
                     )}
                   </div>
@@ -164,7 +164,7 @@ export default function HomePage() {
       </section>
 
       {/* Stats Bar */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 border-y" style={{ borderColor: 'rgba(139, 92, 246, 0.1)' }}>
+      <section className="py-12 px-4 sm:px-6 lg:px-8 border-y" style={{ borderColor: 'rgba(37, 99, 235, 0.1)' }}>
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
@@ -199,7 +199,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="text-center mt-10">
-            <Link href="/features" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: '#8B5CF6' }}>
+            <Link href="/features" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: '#2563EB' }}>
               View all features →
             </Link>
           </div>
@@ -207,11 +207,11 @@ export default function HomePage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#0D1422' }}>
+      <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#0B1120' }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4" style={{ color: '#F8FAFC' }}>
-              Up and running in <span className="gradient-text-teal">minutes</span>
+              Up and running in <span className="gradient-text-secure">minutes</span>
             </h2>
             <p className="text-lg" style={{ color: '#94A3B8' }}>No complex setup. No developer required. Just connect and go.</p>
           </div>
@@ -220,9 +220,9 @@ export default function HomePage() {
               <div key={step.step} className="text-center">
                 <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-6"
                   style={{
-                    background: i === 1 ? 'linear-gradient(135deg, #8B5CF6, #4F46E5)' : '#131B2E',
-                    color: i === 1 ? '#F8FAFC' : '#8B5CF6',
-                    border: i === 1 ? 'none' : '1px solid rgba(139, 92, 246, 0.3)',
+                    background: i === 1 ? 'linear-gradient(135deg, #2563EB, #3B82F6)' : '#0F1626',
+                    color: i === 1 ? '#F8FAFC' : '#2563EB',
+                    border: i === 1 ? 'none' : '1px solid rgba(37, 99, 235, 0.3)',
                   }}>
                   {step.step}
                 </div>
@@ -242,7 +242,7 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center justify-center gap-4">
             {platforms.map((p) => (
               <div key={p.name} className="flex items-center gap-2 px-5 py-3 rounded-xl border"
-                style={{ backgroundColor: '#131B2E', borderColor: 'rgba(139, 92, 246, 0.2)', color: '#94A3B8' }}>
+                style={{ backgroundColor: '#0F1626', borderColor: 'rgba(37, 99, 235, 0.2)', color: '#94A3B8' }}>
                 <span className="text-xl">{p.icon}</span>
                 <span className="text-sm font-medium">{p.name}</span>
               </div>
@@ -255,9 +255,9 @@ export default function HomePage() {
       <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="rounded-3xl p-12 text-center relative overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, rgba(139,92,246,0.2) 0%, rgba(79,70,229,0.2) 100%)', border: '1px solid rgba(139,92,246,0.3)' }}>
+            style={{ background: 'linear-gradient(135deg, rgba(37,99,235,0.2) 0%, rgba(59,130,246,0.2) 100%)', border: '1px solid rgba(37,99,235,0.3)' }}>
             <div className="absolute inset-0 opacity-20 blur-3xl pointer-events-none"
-              style={{ background: 'radial-gradient(circle at center, #8B5CF6 0%, transparent 70%)' }} />
+              style={{ background: 'radial-gradient(circle at center, #2563EB 0%, transparent 70%)' }} />
             <div className="relative z-10">
               <h2 className="text-4xl sm:text-5xl font-bold mb-4" style={{ color: '#F8FAFC' }}>
                 Start protecting your <span className="gradient-text">reputation</span> today
@@ -266,12 +266,12 @@ export default function HomePage() {
                 Join businesses who respond to every review without lifting a finger. Start with a 14-day free trial.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/pricing" className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-base hover:opacity-90 transition-all glow-violet"
-                  style={{ background: 'linear-gradient(135deg, #8B5CF6, #4F46E5)', color: '#F8FAFC' }}>
+                <Link href="/pricing" className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-base hover:opacity-90 transition-all shield-glow"
+                  style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }}>
                   Get Started — $49/month
                 </Link>
                 <Link href="/features" className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-base border transition-colors"
-                  style={{ borderColor: 'rgba(139,92,246,0.4)', color: '#94A3B8' }}>
+                  style={{ borderColor: 'rgba(37,99,235,0.4)', color: '#94A3B8' }}>
                   Explore Features
                 </Link>
               </div>

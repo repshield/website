@@ -20,7 +20,7 @@ const coreModules = [
       'Editable drafts with inline AI suggestions',
       'Review history and audit trail for every published response',
     ],
-    accent: '#8B5CF6',
+    accent: '#2563EB',
   },
   {
     id: '02',
@@ -35,7 +35,7 @@ const coreModules = [
       'Witty Matrix: Strictly Professional ↔ Lighthearted & Humorous',
       'Per-location brand profiles for multi-location businesses',
     ],
-    accent: '#4F46E5',
+    accent: '#3B82F6',
   },
   {
     id: '03',
@@ -50,7 +50,7 @@ const coreModules = [
       'Hard restrictions: "We never offer refunds over public threads"',
       'Custom facts: Hours, seasonal offerings, promotions',
     ],
-    accent: '#8B5CF6',
+    accent: '#2563EB',
     codeBlock: `Contextual Business Truths:
 - Business Name: [Location Name]
 - Key Contacts: [Manager / Support Email]
@@ -91,25 +91,25 @@ const mobileFeatures = [
     icon: '📲',
     title: '3-Second Swipe Approval',
     description: 'Push notifications via Firebase Cloud Messaging. Tap the alert, see a split-screen view, swipe right to publish the AI draft instantly.',
-    accent: '#06B6D4',
+    accent: '#22C55E',
   },
   {
     icon: '💬',
     title: 'WhatsApp Post-on-the-Go Bot',
     description: 'The system texts you the review and draft. Reply "1" to publish live. Reply with custom text to override the draft. Dead simple.',
-    accent: '#06B6D4',
+    accent: '#22C55E',
   },
   {
     icon: '📋',
     title: 'Yelp Clipboard Bridge',
     description: 'One tap auto-copies the AI draft to your clipboard and launches the Yelp app directly to the target review. No switching required.',
-    accent: '#8B5CF6',
+    accent: '#2563EB',
   },
   {
     icon: '🔔',
     title: 'Flutter Cross-Platform App',
     description: 'Lightweight native iOS/Android client engineered solely for fast, on-the-go review approvals. Minimal UI, maximum speed.',
-    accent: '#4F46E5',
+    accent: '#3B82F6',
   },
 ];
 
@@ -138,14 +138,14 @@ const agencyFeatures = [
 
 export default function FeaturesPage() {
   return (
-    <div style={{ backgroundColor: '#090D16' }}>
+    <div style={{ backgroundColor: '#060913' }}>
       {/* Hero */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at top, #8B5CF6 0%, transparent 60%)' }} />
+          style={{ background: 'radial-gradient(ellipse at top, #2563EB 0%, transparent 60%)' }} />
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold mb-6 border"
-            style={{ backgroundColor: 'rgba(139,92,246,0.1)', borderColor: 'rgba(139,92,246,0.3)', color: '#8B5CF6' }}>
+            style={{ backgroundColor: 'rgba(37,99,235,0.1)', borderColor: 'rgba(37,99,235,0.3)', color: '#2563EB' }}>
             Technical Specification
           </div>
           <h1 className="text-5xl sm:text-6xl font-bold mb-6" style={{ color: '#F8FAFC' }}>
@@ -193,7 +193,7 @@ export default function FeaturesPage() {
                 <div className={i % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
                   <div className="glass-card rounded-2xl p-6">
                     {mod.codeBlock ? (
-                      <pre className="text-xs font-mono leading-relaxed whitespace-pre-wrap" style={{ color: '#06B6D4' }}>
+                      <pre className="text-xs font-mono leading-relaxed whitespace-pre-wrap" style={{ color: '#22C55E' }}>
                         {mod.codeBlock}
                       </pre>
                     ) : (
@@ -204,9 +204,9 @@ export default function FeaturesPage() {
                         </div>
                         {mod.bullets.map((bullet, bi) => (
                           <div key={bi} className="flex items-center gap-3 p-3 rounded-lg"
-                            style={{ backgroundColor: '#1E293B' }}>
+                            style={{ backgroundColor: '#1B253B' }}>
                             <div className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0"
-                              style={{ background: `linear-gradient(135deg, ${mod.accent}, #4F46E5)`, color: '#F8FAFC' }}>
+                              style={{ background: `linear-gradient(135deg, ${mod.accent}, #3B82F6)`, color: '#F8FAFC' }}>
                               {bi + 1}
                             </div>
                             <span className="text-xs" style={{ color: '#94A3B8' }}>{bullet}</span>
@@ -223,7 +223,7 @@ export default function FeaturesPage() {
       </section>
 
       {/* Platform Connectors */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#0D1422' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#0B1120' }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4" style={{ color: '#F8FAFC' }}>Platform Connectors</h2>
@@ -236,8 +236,8 @@ export default function FeaturesPage() {
                   <span className="text-sm font-bold" style={{ color: '#F8FAFC' }}>Release {release.release}</span>
                   <span className="text-xs px-2 py-1 rounded-full font-semibold"
                     style={{
-                      backgroundColor: release.status === 'live' ? 'rgba(6,182,212,0.15)' : release.status === 'coming' ? 'rgba(139,92,246,0.15)' : 'rgba(100,116,139,0.15)',
-                      color: release.status === 'live' ? '#06B6D4' : release.status === 'coming' ? '#8B5CF6' : '#64748B',
+                      backgroundColor: release.status === 'live' ? 'rgba(34,197,94,0.15)' : release.status === 'coming' ? 'rgba(37,99,235,0.15)' : 'rgba(100,116,139,0.15)',
+                      color: release.status === 'live' ? '#22C55E' : release.status === 'coming' ? '#2563EB' : '#64748B',
                     }}>
                     {release.status === 'live' ? '● Live' : release.status === 'coming' ? '◐ Coming' : '○ Planned'}
                   </span>
@@ -264,7 +264,7 @@ export default function FeaturesPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4" style={{ color: '#F8FAFC' }}>
-              Mobile & <span className="gradient-text-teal">WhatsApp</span> Layer
+              Mobile & <span className="gradient-text-secure">WhatsApp</span> Layer
             </h2>
             <p className="text-base" style={{ color: '#94A3B8' }}>Release 2.0 — Low-friction mobile workflows for on-the-go approvals.</p>
           </div>
@@ -284,7 +284,7 @@ export default function FeaturesPage() {
       </section>
 
       {/* Agency Features */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#0D1422' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#0B1120' }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4" style={{ color: '#F8FAFC' }}>
@@ -296,7 +296,7 @@ export default function FeaturesPage() {
             {agencyFeatures.map((f) => (
               <div key={f.title} className="glass-card rounded-2xl p-6 text-center">
                 <div className="text-3xl mb-4 mx-auto w-12 h-12 rounded-xl flex items-center justify-center"
-                  style={{ backgroundColor: 'rgba(139,92,246,0.15)' }}>
+                  style={{ backgroundColor: 'rgba(37,99,235,0.15)' }}>
                   {f.icon}
                 </div>
                 <h3 className="text-base font-semibold mb-2" style={{ color: '#F8FAFC' }}>{f.title}</h3>
@@ -314,8 +314,8 @@ export default function FeaturesPage() {
             Ready to put these features to work?
           </h2>
           <p className="text-base mb-8" style={{ color: '#94A3B8' }}>Start your 14-day free trial and see the difference in your review response rate.</p>
-          <Link href="/pricing" className="inline-block px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition-all glow-violet"
-            style={{ background: 'linear-gradient(135deg, #8B5CF6, #4F46E5)', color: '#F8FAFC' }}>
+          <Link href="/pricing" className="inline-block px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition-all shield-glow"
+            style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }}>
             View Pricing Plans
           </Link>
         </div>
