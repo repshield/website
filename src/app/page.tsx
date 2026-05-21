@@ -270,9 +270,9 @@ export default function HomePage() {
                   style={{ background: 'linear-gradient(135deg, #8B5CF6, #4F46E5)', color: '#F8FAFC' }}>
                   Get Started — $49/month
                 </Link>
-                <Link href="/roadmap" className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-base border transition-colors"
+                <Link href="/features" className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-base border transition-colors"
                   style={{ borderColor: 'rgba(139,92,246,0.4)', color: '#94A3B8' }}>
-                  View Roadmap
+                  Explore Features
                 </Link>
               </div>
             </div>
