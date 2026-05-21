@@ -125,9 +125,8 @@ export default function Navbar() {
                 className="flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
                 style={{ color: dropdownOpen ? '#F8FAFC' : '#94A3B8', backgroundColor: dropdownOpen ? 'rgba(37,99,235,0.15)' : 'transparent' }}
               >
-                Business Types
+                Businesses
                 <svg
-                  className="w-3.5 h-3.5 transition-transform duration-300"
                   style={{ transform: dropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
                   fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 >
@@ -365,9 +364,8 @@ export default function Navbar() {
             className="flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium w-full"
             style={{ color: '#94A3B8', backgroundColor: mobileCategOpen ? 'rgba(37,99,235,0.1)' : 'transparent' }}
           >
-            Business Types
+            Businesses
             <svg
-              className="w-4 h-4 transition-transform duration-300"
               style={{ transform: mobileCategOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
               fill="none" stroke="currentColor" viewBox="0 0 24 24"
             >
