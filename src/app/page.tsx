@@ -200,7 +200,7 @@ export default function HomePage() {
           </div>
           <div className="text-center mt-10">
             <Link href="/features" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: '#2563EB' }}>
-              View all features →
+              Explore All Features
             </Link>
           </div>
         </div>
