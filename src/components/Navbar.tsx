@@ -127,10 +127,11 @@ export default function Navbar() {
               >
                 Businesses
                 <svg
-                  className="w-3.5 h-3.5"
+                  className="w-3.5 h-3.5 transition-transform duration-300"
+                  style={{ transform: dropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
                   fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
 
