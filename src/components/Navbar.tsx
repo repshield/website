@@ -122,15 +122,15 @@ export default function Navbar() {
                 ref={triggerRef}
                 onMouseEnter={openDropdown}
                 onMouseLeave={scheduleClose}
-                className="flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
-                style={{ color: dropdownOpen ? '#F8FAFC' : '#94A3B8', backgroundColor: dropdownOpen ? 'rgba(37,99,235,0.15)' : 'transparent' }}
+                className="flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
+                style={{ color: dropdownOpen ? '#F8FAFC' : '#94A3B8', backgroundColor: 'transparent' }}
               >
                 Businesses
                 <svg
-                  style={{ transform: dropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                  className="w-3.5 h-3.5"
                   fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
 
