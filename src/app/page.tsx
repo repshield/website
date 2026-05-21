@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import AnimateIn from '@/components/AnimateIn';
 import CountUp from '@/components/CountUp';
 import WaitlistForm from '@/components/WaitlistForm';
@@ -200,7 +201,7 @@ export default function HomePage() {
                 <div className="glass-card rounded-2xl p-6 h-full" style={{ cursor: 'default' }}>
                   <div className="mb-4 w-12 h-12 rounded-xl flex items-center justify-center"
                     style={{ backgroundColor: `${feature.accent}20` }}>
-                    <img src={feature.icon} width={32} height={32} alt="" />
+                    <Image src={feature.icon} width={32} height={32} alt="" />
                   </div>
                   <h3 className="text-lg font-semibold mb-2" style={{ color: '#F8FAFC' }}>{feature.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: '#94A3B8' }}>{feature.description}</p>
@@ -259,7 +260,7 @@ export default function HomePage() {
               <AnimateIn key={p.name} delay={i * 80} direction="scale">
                 <div className="flex items-center gap-2 px-5 py-3 rounded-xl border transition-all duration-200"
                   style={{ backgroundColor: '#0F1626', borderColor: 'rgba(37, 99, 235, 0.2)', color: '#94A3B8' }}>
-                  <img src={p.icon} width={24} height={24} alt="" />
+                  <Image src={p.icon} width={24} height={24} alt="" />
                   <span className="text-sm font-medium">{p.name}</span>
                 </div>
               </AnimateIn>

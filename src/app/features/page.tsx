@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import AnimateIn from '@/components/AnimateIn';
 
@@ -174,7 +175,7 @@ export default function FeaturesPage() {
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-10 h-10 rounded-xl flex items-center justify-center"
                         style={{ backgroundColor: `${mod.accent}20` }}>
-                        <img src={mod.icon} width={28} height={28} alt="" />
+                        <Image src={mod.icon} width={28} height={28} alt="" />
                       </div>
                       <span className="text-xs font-mono font-semibold px-2 py-1 rounded"
                         style={{ backgroundColor: `${mod.accent}15`, color: mod.accent }}>
@@ -252,7 +253,7 @@ export default function FeaturesPage() {
                     {release.platforms.map((p) => (
                       <div key={p.name}>
                         <div className="flex items-center gap-2 mb-1">
-                          <img src={p.icon} width={20} height={20} alt="" />
+                          <Image src={p.icon} width={20} height={20} alt="" />
                           <span className="text-sm font-medium" style={{ color: '#F8FAFC' }}>{p.name}</span>
                         </div>
                         <p className="text-xs pl-7" style={{ color: '#64748B' }}>{p.detail}</p>
@@ -281,7 +282,7 @@ export default function FeaturesPage() {
                 <div className="glass-card rounded-2xl p-6">
                   <div className="mb-4 w-12 h-12 rounded-xl flex items-center justify-center"
                     style={{ backgroundColor: `${f.accent}20` }}>
-                    <img src={f.icon} width={32} height={32} alt="" />
+                    <Image src={f.icon} width={32} height={32} alt="" />
                   </div>
                   <h3 className="text-lg font-semibold mb-2" style={{ color: '#F8FAFC' }}>{f.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: '#94A3B8' }}>{f.description}</p>
@@ -307,7 +308,7 @@ export default function FeaturesPage() {
                 <div className="glass-card rounded-2xl p-6 text-center">
                   <div className="mb-4 mx-auto w-12 h-12 rounded-xl flex items-center justify-center"
                     style={{ backgroundColor: 'rgba(37,99,235,0.15)' }}>
-                    <img src={f.icon} width={28} height={28} alt="" />
+                    <Image src={f.icon} width={28} height={28} alt="" />
                   </div>
                   <h3 className="text-base font-semibold mb-2" style={{ color: '#F8FAFC' }}>{f.title}</h3>
                   <p className="text-xs leading-relaxed" style={{ color: '#94A3B8' }}>{f.description}</p>
