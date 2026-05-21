@@ -86,34 +86,38 @@ export default function PricingPage() {
             Full feature comparison
           </h2>
           <div className="glass-card rounded-2xl overflow-hidden">
-            {/* Header */}
-            <div className="grid grid-cols-4 gap-4 p-4 border-b" style={{ borderColor: 'rgba(37,99,235,0.15)' }}>
-              <div />
-              {[
-                { label: 'Retail Core', color: '#3B82F6' },
-                { label: 'Kinetic', color: '#2563EB' },
-                { label: 'Prestige', color: '#22C55E' },
-              ].map(({ label, color }) => (
-                <div key={label} className="text-center">
-                  <span className="text-sm font-bold" style={{ color }}>{label}</span>
+            <div className="overflow-x-auto">
+              <div className="min-w-[520px]">
+                {/* Header */}
+                <div className="grid grid-cols-4 gap-4 p-4 border-b" style={{ borderColor: 'rgba(37,99,235,0.15)' }}>
+                  <div />
+                  {[
+                    { label: 'Retail Core', color: '#3B82F6' },
+                    { label: 'Kinetic', color: '#2563EB' },
+                    { label: 'Prestige', color: '#22C55E' },
+                  ].map(({ label, color }) => (
+                    <div key={label} className="text-center">
+                      <span className="text-sm font-bold" style={{ color }}>{label}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-            {comparisonFeatures.map((row, i) => (
-              <div
-                key={row.feature}
-                className="grid grid-cols-4 gap-4 px-4 py-3"
-                style={{ backgroundColor: i % 2 === 0 ? 'transparent' : 'rgba(27,37,59,0.3)' }}
-              >
-                <div className="text-sm" style={{ color: '#94A3B8' }}>{row.feature}</div>
-                {[row.retail, row.kinetic, row.prestige].map((val, vi) => (
-                  <div key={vi} className="text-center text-sm"
-                    style={{ color: val === '✓' ? '#22C55E' : val === '—' ? '#1B253B' : '#F8FAFC' }}>
-                    {val}
+                {comparisonFeatures.map((row, i) => (
+                  <div
+                    key={row.feature}
+                    className="grid grid-cols-4 gap-4 px-4 py-3"
+                    style={{ backgroundColor: i % 2 === 0 ? 'transparent' : 'rgba(27,37,59,0.3)' }}
+                  >
+                    <div className="text-sm" style={{ color: '#94A3B8' }}>{row.feature}</div>
+                    {[row.retail, row.kinetic, row.prestige].map((val, vi) => (
+                      <div key={vi} className="text-center text-sm"
+                        style={{ color: val === '✓' ? '#22C55E' : val === '—' ? '#1B253B' : '#F8FAFC' }}>
+                        {val}
+                      </div>
+                    ))}
                   </div>
                 ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>

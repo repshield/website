@@ -193,7 +193,7 @@ export default function FeaturesPage() {
                 <div className={i % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
                   <div className="glass-card rounded-2xl p-6">
                     {mod.codeBlock ? (
-                      <pre className="text-xs font-mono leading-relaxed whitespace-pre-wrap" style={{ color: '#22C55E' }}>
+                      <pre className="text-xs font-mono leading-relaxed whitespace-pre-wrap overflow-x-auto" style={{ color: '#22C55E' }}>
                         {mod.codeBlock}
                       </pre>
                     ) : (

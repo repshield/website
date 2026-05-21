@@ -121,7 +121,7 @@ export default function HomePage() {
               <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#EF4444' }} />
               <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#F59E0B' }} />
               <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#10B981' }} />
-              <span className="ml-2 text-xs font-mono" style={{ color: '#64748B' }}>repshield.live/dashboard</span>
+              <span className="ml-2 text-xs font-mono truncate" style={{ color: '#64748B' }}>repshield.live/dashboard</span>
             </div>
             <div className="space-y-3">
               {[
@@ -254,7 +254,7 @@ export default function HomePage() {
       {/* CTA */}
       <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="rounded-3xl p-12 text-center relative overflow-hidden"
+          <div className="rounded-3xl p-6 sm:p-12 text-center relative overflow-hidden"
             style={{ background: 'linear-gradient(135deg, rgba(37,99,235,0.2) 0%, rgba(59,130,246,0.2) 100%)', border: '1px solid rgba(37,99,235,0.3)' }}>
             <div className="absolute inset-0 opacity-20 blur-3xl pointer-events-none"
               style={{ background: 'radial-gradient(circle at center, #2563EB 0%, transparent 70%)' }} />
@@ -268,7 +268,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link href="/pricing" className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-base hover:opacity-90 transition-all shield-glow"
                   style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }}>
-                  Get Started — $49/month
+                  Get Started — from ₹2,999/mo
                 </Link>
                 <Link href="/features" className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-base border transition-colors"
                   style={{ borderColor: 'rgba(37,99,235,0.4)', color: '#94A3B8' }}>
