@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const navLinks = [
   { href: '/about', label: 'About' },
@@ -10,16 +10,83 @@ const navLinks = [
   { href: '/pricing', label: 'Pricing' },
 ];
 
+const businessCategories = [
+  {
+    id: 'food',
+    label: 'Food & Dining',
+    emoji: '🍽️',
+    color: '#f97316',
+    types: ['Restaurant', 'Cafe', 'South Indian Restaurant', 'Biryani Restaurant', 'Pizzeria', 'Cloud Kitchen', 'Bakery', 'Bar & Pub'],
+  },
+  {
+    id: 'health',
+    label: 'Health & Medical',
+    emoji: '🏥',
+    color: '#22c55e',
+    types: ['Dental Clinic', 'Physiotherapist', 'Ayurvedic Clinic', 'Dermatologist', 'Hospital', 'Eye Clinic', 'Pharmacy'],
+  },
+  {
+    id: 'professional',
+    label: 'Professional Services',
+    emoji: '💼',
+    color: '#3b82f6',
+    types: ['Chartered Accountant', 'Law Firm', 'Digital Marketing Agency', 'Architect', 'IT Services', 'Consultant'],
+  },
+  {
+    id: 'retail',
+    label: 'Retail & Consumer Goods',
+    emoji: '🛍️',
+    color: '#a855f7',
+    types: ['Saree Shop', 'Supermarket', 'Pet Supply Store', 'Electronics Store', 'Clothing Store', 'Grocery'],
+  },
+  {
+    id: 'automotive',
+    label: 'Automotive & Transport',
+    emoji: '🚗',
+    color: '#64748b',
+    types: ['Auto Repair Shop', 'Car Wash', 'EV Charging Station', 'Logistics Company', 'Car Dealer'],
+  },
+  {
+    id: 'beauty',
+    label: 'Beauty & Wellness',
+    emoji: '✨',
+    color: '#ec4899',
+    types: ['Hair Salon', 'Yoga Studio', 'Day Spa', 'Gym', 'Nail Salon', 'Barbershop'],
+  },
+  {
+    id: 'education',
+    label: 'Education & Training',
+    emoji: '🎓',
+    color: '#eab308',
+    types: ['Coaching Center', 'Preschool', 'Music School', 'Tuition Center', 'Language School'],
+  },
+];
+
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileCategOpen, setMobileCategOpen] = useState(false);
+  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const closeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 24);
     window.addEventListener('scroll', handler, { passive: true });
     return () => window.removeEventListener('scroll', handler);
   }, []);
+
+  const openDropdown = () => {
+    if (closeTimeout.current) clearTimeout(closeTimeout.current);
+    setDropdownOpen(true);
+  };
+
+  const scheduleClose = () => {
+    closeTimeout.current = setTimeout(() => setDropdownOpen(false), 120);
+  };
 
   return (
     <header
@@ -50,6 +117,137 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
+            {/* Business Types Dropdown Trigger */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                ref={triggerRef}
+                onMouseEnter={openDropdown}
+                onMouseLeave={scheduleClose}
+                className="flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                style={{ color: dropdownOpen ? '#F8FAFC' : '#94A3B8', backgroundColor: dropdownOpen ? 'rgba(37,99,235,0.15)' : 'transparent' }}
+              >
+                Business Types
+                <svg
+                  className="w-3.5 h-3.5 transition-transform duration-300"
+                  style={{ transform: dropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                  fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {/* Mega Dropdown Panel */}
+              <div
+                onMouseEnter={openDropdown}
+                onMouseLeave={scheduleClose}
+                style={{
+                  position: 'fixed',
+                  top: '64px',
+                  left: '50%',
+                  transform: dropdownOpen
+                    ? 'translateX(-50%) translateY(0)'
+                    : 'translateX(-50%) translateY(-10px)',
+                  opacity: dropdownOpen ? 1 : 0,
+                  pointerEvents: dropdownOpen ? 'auto' : 'none',
+                  transition: 'opacity 0.28s cubic-bezier(0.16,1,0.3,1), transform 0.28s cubic-bezier(0.16,1,0.3,1)',
+                  width: 'min(820px, 96vw)',
+                  backgroundColor: '#0D1628',
+                  border: '1px solid rgba(37,99,235,0.2)',
+                  borderRadius: '16px',
+                  padding: '24px',
+                  boxShadow: '0 24px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(37,99,235,0.1)',
+                  zIndex: 9999,
+                }}
+              >
+                {/* Header row */}
+                <div className="flex items-center justify-between mb-4 pb-3"
+                  style={{ borderBottom: '1px solid rgba(37,99,235,0.12)' }}>
+                  <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#475569' }}>
+                    Works for every business type
+                  </span>
+                  <span className="text-xs px-2 py-0.5 rounded-full font-semibold"
+                    style={{ backgroundColor: 'rgba(37,99,235,0.12)', color: '#3b82f6' }}>
+                    7 verticals · 50+ types
+                  </span>
+                </div>
+
+                {/* Categories Grid */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                  {businessCategories.map((cat, i) => (
+                    <div
+                      key={cat.id}
+                      onMouseEnter={() => setHoveredCategory(cat.id)}
+                      onMouseLeave={() => setHoveredCategory(null)}
+                      style={{
+                        borderRadius: '10px',
+                        padding: '12px',
+                        backgroundColor: hoveredCategory === cat.id ? 'rgba(37,99,235,0.08)' : 'transparent',
+                        border: `1px solid ${hoveredCategory === cat.id ? 'rgba(37,99,235,0.25)' : 'transparent'}`,
+                        transition: 'background-color 0.18s ease, border-color 0.18s ease',
+                        cursor: 'default',
+                        // stagger entrance
+                        animation: dropdownOpen ? `fadeInUp 0.4s cubic-bezier(0.16,1,0.3,1) ${i * 35}ms both` : 'none',
+                      }}
+                    >
+                      <div className="flex items-center gap-2 mb-2">
+                        <span style={{ fontSize: '15px', lineHeight: 1 }}>{cat.emoji}</span>
+                        <span className="text-xs font-semibold" style={{ color: '#F8FAFC' }}>{cat.label}</span>
+                      </div>
+                      <div className="flex flex-wrap gap-1">
+                        {cat.types.slice(0, 4).map((type) => (
+                          <span key={type}
+                            className="text-xs px-1.5 py-0.5 rounded"
+                            style={{
+                              backgroundColor: `${cat.color}14`,
+                              color: cat.color,
+                              fontSize: '10px',
+                              fontWeight: 500,
+                              transition: 'background-color 0.15s ease',
+                            }}
+                          >
+                            {type}
+                          </span>
+                        ))}
+                        {cat.types.length > 4 && (
+                          <span className="text-xs px-1.5 py-0.5 rounded"
+                            style={{ backgroundColor: 'rgba(100,116,139,0.12)', color: '#64748b', fontSize: '10px' }}>
+                            +{cat.types.length - 4} more
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+
+                  {/* CTA tile */}
+                  <div style={{
+                    borderRadius: '10px',
+                    padding: '12px',
+                    background: 'linear-gradient(135deg, rgba(37,99,235,0.18), rgba(59,130,246,0.12))',
+                    border: '1px solid rgba(37,99,235,0.3)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    animation: dropdownOpen ? `fadeInUp 0.4s cubic-bezier(0.16,1,0.3,1) ${7 * 35}ms both` : 'none',
+                  }}>
+                    <div>
+                      <div className="text-xs font-semibold mb-1" style={{ color: '#F8FAFC' }}>Your category</div>
+                      <div style={{ color: '#94A3B8', fontSize: '11px', lineHeight: 1.5 }}>
+                        Don&apos;t see your niche? RepShield works for any Google-listed business.
+                      </div>
+                    </div>
+                    <Link
+                      href="/#waitlist"
+                      onClick={() => setDropdownOpen(false)}
+                      className="mt-3 inline-block text-center text-xs font-semibold px-3 py-1.5 rounded-lg"
+                      style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }}
+                    >
+                      Get Early Access →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -104,11 +302,45 @@ export default function Navbar() {
       {menuOpen && (
         <div
           className="md:hidden border-t px-4 py-4 flex flex-col gap-2"
-          style={{
-            backgroundColor: '#0F1626',
-            borderColor: 'rgba(37, 99, 235, 0.15)',
-          }}
+          style={{ backgroundColor: '#0F1626', borderColor: 'rgba(37, 99, 235, 0.15)' }}
         >
+          {/* Mobile categories accordion */}
+          <button
+            onClick={() => setMobileCategOpen(!mobileCategOpen)}
+            className="flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium w-full"
+            style={{ color: '#94A3B8', backgroundColor: mobileCategOpen ? 'rgba(37,99,235,0.1)' : 'transparent' }}
+          >
+            Business Types
+            <svg
+              className="w-4 h-4 transition-transform duration-300"
+              style={{ transform: mobileCategOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+              fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          {mobileCategOpen && (
+            <div className="ml-2 flex flex-col gap-2 pb-1">
+              {businessCategories.map((cat) => (
+                <div key={cat.id} className="px-3 py-2 rounded-lg"
+                  style={{ backgroundColor: 'rgba(255,255,255,0.03)', border: '1px solid rgba(37,99,235,0.1)' }}>
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span style={{ fontSize: '13px' }}>{cat.emoji}</span>
+                    <span className="text-xs font-semibold" style={{ color: '#F8FAFC' }}>{cat.label}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-1">
+                    {cat.types.slice(0, 3).map((type) => (
+                      <span key={type} className="text-xs px-1.5 py-0.5 rounded"
+                        style={{ backgroundColor: `${cat.color}14`, color: cat.color, fontSize: '10px' }}>
+                        {type}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
           {navLinks.map((link) => (
             <Link
               key={link.href}
