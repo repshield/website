@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const stats = [
   { value: '< 3s', label: 'Avg. Approval Time' },
-  { value: '5+', label: 'Review Platforms' },
+  { value: 'Google', label: 'Live Now' },
   { value: '98%', label: 'Response Rate' },
   { value: '10h+', label: 'Saved Per Week' },
 ];
@@ -100,7 +100,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <Link
-              href="/pricing"
+              href="#waitlist"
               className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-base transition-all duration-200 hover:opacity-90 hover:scale-105 shield-glow"
               style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }}
             >
@@ -251,6 +251,51 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Waitlist */}
+      <section id="waitlist" className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#0B1120' }}>
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold mb-6 border"
+            style={{ backgroundColor: 'rgba(37,99,235,0.1)', borderColor: 'rgba(37,99,235,0.3)', color: '#2563EB' }}>
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#2563EB' }} />
+            Beta — Limited spots available
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#F8FAFC' }}>
+            Get early access
+          </h2>
+          <p className="text-base mb-8" style={{ color: '#94A3B8' }}>
+            We&apos;re onboarding businesses in batches. Drop your email and we&apos;ll reach out within 48 hours.
+          </p>
+          <form
+            action={`mailto:hello@repshield.live`}
+            method="get"
+            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+          >
+            <input
+              type="email"
+              name="subject"
+              placeholder="your@email.com"
+              required
+              className="flex-1 px-4 py-3 rounded-xl text-sm outline-none focus:ring-2"
+              style={{
+                backgroundColor: '#0F1626',
+                border: '1px solid rgba(37,99,235,0.3)',
+                color: '#F8FAFC',
+              }}
+            />
+            <button
+              type="submit"
+              className="px-6 py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition-all shrink-0"
+              style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }}
+            >
+              Request Access
+            </button>
+          </form>
+          <p className="text-xs mt-4" style={{ color: '#475569' }}>
+            14-day free trial when onboarded. No credit card required.
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
@@ -266,7 +311,7 @@ export default function HomePage() {
                 Join businesses who respond to every review without lifting a finger. Start with a 14-day free trial.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/pricing" className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-base hover:opacity-90 transition-all shield-glow"
+                <Link href="#waitlist" className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-base hover:opacity-90 transition-all shield-glow"
                   style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }}>
                   Get Started — from ₹2,999/mo
                 </Link>

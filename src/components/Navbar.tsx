@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 const navLinks = [
+  { href: '/about', label: 'About' },
   { href: '/features', label: 'Features' },
   { href: '/pricing', label: 'Pricing' },
 ];
@@ -57,13 +58,6 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <Link
-              href="/pricing"
-              className="text-sm font-medium px-4 py-2 rounded-lg transition-colors duration-200"
-              style={{ color: '#94A3B8' }}
-            >
-              Sign In
-            </Link>
             <Link
               href="/pricing"
               className="text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 hover:opacity-90"
