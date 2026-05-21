@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import AnimateIn from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
   title: 'Features — RepShield',
@@ -160,63 +161,67 @@ export default function FeaturesPage() {
       {/* Core AI Modules */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center" style={{ color: '#F8FAFC' }}>
-            Core AI Modules
-          </h2>
+          <AnimateIn className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-12 text-center" style={{ color: '#F8FAFC' }}>
+              Core AI Modules
+            </h2>
+          </AnimateIn>
           <div className="space-y-12">
             {coreModules.map((mod, i) => (
-              <div key={mod.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${i % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-                <div className={i % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center"
-                      style={{ backgroundColor: `${mod.accent}20` }}>
-                      <img src={mod.icon} width={28} height={28} alt="" />
-                    </div>
-                    <span className="text-xs font-mono font-semibold px-2 py-1 rounded"
-                      style={{ backgroundColor: `${mod.accent}15`, color: mod.accent }}>
-                      Module {mod.id}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2" style={{ color: '#F8FAFC' }}>{mod.title}</h3>
-                  <p className="text-sm font-semibold mb-3" style={{ color: mod.accent }}>{mod.tagline}</p>
-                  <p className="text-base leading-relaxed mb-6" style={{ color: '#94A3B8' }}>{mod.description}</p>
-                  <ul className="space-y-2">
-                    {mod.bullets.map((bullet) => (
-                      <li key={bullet} className="flex items-start gap-3 text-sm" style={{ color: '#94A3B8' }}>
-                        <span className="mt-1 w-4 h-4 rounded-full flex items-center justify-center shrink-0 text-xs"
-                          style={{ backgroundColor: `${mod.accent}20`, color: mod.accent }}>✓</span>
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className={i % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
-                  <div className="glass-card rounded-2xl p-6">
-                    {mod.codeBlock ? (
-                      <pre className="text-xs font-mono leading-relaxed whitespace-pre-wrap overflow-x-auto" style={{ color: '#22C55E' }}>
-                        {mod.codeBlock}
-                      </pre>
-                    ) : (
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-2 mb-4">
-                          <div className="w-2 h-2 rounded-full" style={{ backgroundColor: mod.accent }} />
-                          <span className="text-xs font-mono" style={{ color: '#64748B' }}>{mod.title}</span>
-                        </div>
-                        {mod.bullets.map((bullet, bi) => (
-                          <div key={bi} className="flex items-center gap-3 p-3 rounded-lg"
-                            style={{ backgroundColor: '#1B253B' }}>
-                            <div className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0"
-                              style={{ background: `linear-gradient(135deg, ${mod.accent}, #3B82F6)`, color: '#F8FAFC' }}>
-                              {bi + 1}
-                            </div>
-                            <span className="text-xs" style={{ color: '#94A3B8' }}>{bullet}</span>
-                          </div>
-                        ))}
+              <AnimateIn key={mod.id} delay={i * 100} direction={i % 2 === 0 ? 'left' : 'right'}>
+                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${i % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+                  <div className={i % 2 === 1 ? 'lg:col-start-2' : ''}>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-xl flex items-center justify-center"
+                        style={{ backgroundColor: `${mod.accent}20` }}>
+                        <img src={mod.icon} width={28} height={28} alt="" />
                       </div>
-                    )}
+                      <span className="text-xs font-mono font-semibold px-2 py-1 rounded"
+                        style={{ backgroundColor: `${mod.accent}15`, color: mod.accent }}>
+                        Module {mod.id}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2" style={{ color: '#F8FAFC' }}>{mod.title}</h3>
+                    <p className="text-sm font-semibold mb-3" style={{ color: mod.accent }}>{mod.tagline}</p>
+                    <p className="text-base leading-relaxed mb-6" style={{ color: '#94A3B8' }}>{mod.description}</p>
+                    <ul className="space-y-2">
+                      {mod.bullets.map((bullet) => (
+                        <li key={bullet} className="flex items-start gap-3 text-sm" style={{ color: '#94A3B8' }}>
+                          <span className="mt-1 w-4 h-4 rounded-full flex items-center justify-center shrink-0 text-xs"
+                            style={{ backgroundColor: `${mod.accent}20`, color: mod.accent }}>✓</span>
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className={i % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
+                    <div className="glass-card rounded-2xl p-6">
+                      {mod.codeBlock ? (
+                        <pre className="text-xs font-mono leading-relaxed whitespace-pre-wrap overflow-x-auto" style={{ color: '#22C55E' }}>
+                          {mod.codeBlock}
+                        </pre>
+                      ) : (
+                        <div className="space-y-4">
+                          <div className="flex items-center gap-2 mb-4">
+                            <div className="w-2 h-2 rounded-full" style={{ backgroundColor: mod.accent }} />
+                            <span className="text-xs font-mono" style={{ color: '#64748B' }}>{mod.title}</span>
+                          </div>
+                          {mod.bullets.map((bullet, bi) => (
+                            <div key={bi} className="flex items-center gap-3 p-3 rounded-lg"
+                              style={{ backgroundColor: '#1B253B' }}>
+                              <div className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0"
+                                style={{ background: `linear-gradient(135deg, ${mod.accent}, #3B82F6)`, color: '#F8FAFC' }}>
+                                {bi + 1}
+                              </div>
+                              <span className="text-xs" style={{ color: '#94A3B8' }}>{bullet}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </AnimateIn>
             ))}
           </div>
         </div>
@@ -225,35 +230,37 @@ export default function FeaturesPage() {
       {/* Platform Connectors */}
       <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#0B1120' }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <AnimateIn className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4" style={{ color: '#F8FAFC' }}>Platform Connectors</h2>
             <p className="text-base" style={{ color: '#94A3B8' }}>Growing platform coverage across every release.</p>
-          </div>
+          </AnimateIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {platformFeatures.map((release) => (
-              <div key={release.release} className="glass-card rounded-2xl p-6">
-                <div className="flex items-center justify-between mb-5">
-                  <span className="text-sm font-bold" style={{ color: '#F8FAFC' }}>Release {release.release}</span>
-                  <span className="text-xs px-2 py-1 rounded-full font-semibold"
-                    style={{
-                      backgroundColor: release.status === 'live' ? 'rgba(34,197,94,0.15)' : release.status === 'coming' ? 'rgba(37,99,235,0.15)' : 'rgba(100,116,139,0.15)',
-                      color: release.status === 'live' ? '#22C55E' : release.status === 'coming' ? '#2563EB' : '#64748B',
-                    }}>
-                    {release.status === 'live' ? '● Live' : release.status === 'coming' ? '◐ Coming' : '○ Planned'}
-                  </span>
-                </div>
-                <div className="space-y-4">
-                  {release.platforms.map((p) => (
-                    <div key={p.name}>
-                      <div className="flex items-center gap-2 mb-1">
-                        <img src={p.icon} width={20} height={20} alt="" />
-                        <span className="text-sm font-medium" style={{ color: '#F8FAFC' }}>{p.name}</span>
+            {platformFeatures.map((release, i) => (
+              <AnimateIn key={release.release} delay={i * 100} direction="up">
+                <div className="glass-card rounded-2xl p-6">
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="text-sm font-bold" style={{ color: '#F8FAFC' }}>Release {release.release}</span>
+                    <span className="text-xs px-2 py-1 rounded-full font-semibold"
+                      style={{
+                        backgroundColor: release.status === 'live' ? 'rgba(34,197,94,0.15)' : release.status === 'coming' ? 'rgba(37,99,235,0.15)' : 'rgba(100,116,139,0.15)',
+                        color: release.status === 'live' ? '#22C55E' : release.status === 'coming' ? '#2563EB' : '#64748B',
+                      }}>
+                      {release.status === 'live' ? '● Live' : release.status === 'coming' ? '◐ Coming' : '○ Planned'}
+                    </span>
+                  </div>
+                  <div className="space-y-4">
+                    {release.platforms.map((p) => (
+                      <div key={p.name}>
+                        <div className="flex items-center gap-2 mb-1">
+                          <img src={p.icon} width={20} height={20} alt="" />
+                          <span className="text-sm font-medium" style={{ color: '#F8FAFC' }}>{p.name}</span>
+                        </div>
+                        <p className="text-xs pl-7" style={{ color: '#64748B' }}>{p.detail}</p>
                       </div>
-                      <p className="text-xs pl-7" style={{ color: '#64748B' }}>{p.detail}</p>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </AnimateIn>
             ))}
           </div>
         </div>
@@ -262,22 +269,24 @@ export default function FeaturesPage() {
       {/* Mobile Features */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <AnimateIn className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4" style={{ color: '#F8FAFC' }}>
               Mobile & <span className="gradient-text-secure">WhatsApp</span> Layer
             </h2>
             <p className="text-base" style={{ color: '#94A3B8' }}>Release 2.0 — Low-friction mobile workflows for on-the-go approvals.</p>
-          </div>
+          </AnimateIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {mobileFeatures.map((f) => (
-              <div key={f.title} className="glass-card rounded-2xl p-6">
-                <div className="mb-4 w-12 h-12 rounded-xl flex items-center justify-center"
-                  style={{ backgroundColor: `${f.accent}20` }}>
-                  <img src={f.icon} width={32} height={32} alt="" />
+            {mobileFeatures.map((f, i) => (
+              <AnimateIn key={f.title} delay={i * 80} direction="up">
+                <div className="glass-card rounded-2xl p-6">
+                  <div className="mb-4 w-12 h-12 rounded-xl flex items-center justify-center"
+                    style={{ backgroundColor: `${f.accent}20` }}>
+                    <img src={f.icon} width={32} height={32} alt="" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#F8FAFC' }}>{f.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: '#94A3B8' }}>{f.description}</p>
                 </div>
-                <h3 className="text-lg font-semibold mb-2" style={{ color: '#F8FAFC' }}>{f.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#94A3B8' }}>{f.description}</p>
-              </div>
+              </AnimateIn>
             ))}
           </div>
         </div>
@@ -286,22 +295,24 @@ export default function FeaturesPage() {
       {/* Agency Features */}
       <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#0B1120' }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <AnimateIn className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4" style={{ color: '#F8FAFC' }}>
               Agency & <span className="gradient-text">White-Label</span> Tools
             </h2>
             <p className="text-base" style={{ color: '#94A3B8' }}>Release 3.0 — Scale to hundreds of clients with full white-label deployment.</p>
-          </div>
+          </AnimateIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {agencyFeatures.map((f) => (
-              <div key={f.title} className="glass-card rounded-2xl p-6 text-center">
-                <div className="mb-4 mx-auto w-12 h-12 rounded-xl flex items-center justify-center"
-                  style={{ backgroundColor: 'rgba(37,99,235,0.15)' }}>
-                  <img src={f.icon} width={28} height={28} alt="" />
+            {agencyFeatures.map((f, i) => (
+              <AnimateIn key={f.title} delay={i * 80} direction="scale">
+                <div className="glass-card rounded-2xl p-6 text-center">
+                  <div className="mb-4 mx-auto w-12 h-12 rounded-xl flex items-center justify-center"
+                    style={{ backgroundColor: 'rgba(37,99,235,0.15)' }}>
+                    <img src={f.icon} width={28} height={28} alt="" />
+                  </div>
+                  <h3 className="text-base font-semibold mb-2" style={{ color: '#F8FAFC' }}>{f.title}</h3>
+                  <p className="text-xs leading-relaxed" style={{ color: '#94A3B8' }}>{f.description}</p>
                 </div>
-                <h3 className="text-base font-semibold mb-2" style={{ color: '#F8FAFC' }}>{f.title}</h3>
-                <p className="text-xs leading-relaxed" style={{ color: '#94A3B8' }}>{f.description}</p>
-              </div>
+              </AnimateIn>
             ))}
           </div>
         </div>
@@ -309,16 +320,16 @@ export default function FeaturesPage() {
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center">
+        <AnimateIn className="max-w-3xl mx-auto text-center" direction="scale">
           <h2 className="text-3xl font-bold mb-4" style={{ color: '#F8FAFC' }}>
             Ready to put these features to work?
           </h2>
           <p className="text-base mb-8" style={{ color: '#94A3B8' }}>Start your 14-day free trial and see the difference in your review response rate.</p>
-          <Link href="/pricing" className="inline-block px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition-all shield-glow"
+          <Link href="/pricing" className="inline-block px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition-all shield-glow btn-shimmer"
             style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }}>
             View Pricing Plans
           </Link>
-        </div>
+        </AnimateIn>
       </section>
     </div>
   );
