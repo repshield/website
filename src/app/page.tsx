@@ -85,7 +85,7 @@ export default function HomePage() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold mb-8 border"
             style={{ backgroundColor: 'rgba(37, 99, 235, 0.1)', borderColor: 'rgba(37, 99, 235, 0.3)', color: '#2563EB' }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#2563EB' }} />
-            Now in Beta — Google Maps First
+            Now Live — Google Maps First
           </div>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight" style={{ color: '#F8FAFC' }}>
             <span className="gradient-text">Shield</span> Your Brand&apos;s{' '}
@@ -257,7 +257,7 @@ export default function HomePage() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold mb-6 border"
             style={{ backgroundColor: 'rgba(37,99,235,0.1)', borderColor: 'rgba(37,99,235,0.3)', color: '#2563EB' }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#2563EB' }} />
-            Beta — Limited spots available
+            Limited spots available
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#F8FAFC' }}>
             Get early access

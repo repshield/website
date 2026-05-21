@@ -58,12 +58,18 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
+            <span
+              className="text-xs font-semibold px-2 py-0.5 rounded-full"
+              style={{ background: 'rgba(37, 99, 235, 0.2)', color: '#60A5FA', border: '1px solid rgba(37, 99, 235, 0.4)' }}
+            >
+              Beta
+            </span>
             <Link
-              href="/pricing"
+              href="/signup"
               className="text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 hover:opacity-90"
               style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }}
             >
-              Start Free Trial
+              Sign Up
             </Link>
           </div>
 
@@ -109,12 +115,12 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/pricing"
+            href="/signup"
             onClick={() => setMenuOpen(false)}
             className="mt-2 text-center text-sm font-semibold px-5 py-3 rounded-lg"
             style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)', color: '#F8FAFC' }}
           >
-            Start Free Trial
+            Sign Up
           </Link>
         </div>
       )}

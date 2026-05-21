@@ -104,14 +104,14 @@ export default function AboutPage() {
                 style={{ backgroundColor: '#22C55E' }}
               />
               <span className="text-xs font-semibold" style={{ color: '#22C55E' }}>
-                Currently in Beta
+                Now Live
               </span>
             </div>
             <h2 className="text-2xl font-bold mb-3" style={{ color: '#F8FAFC' }}>
               Where we are today
             </h2>
             <p className="text-sm leading-relaxed mb-4" style={{ color: '#94A3B8' }}>
-              RepShield is currently in private beta with a focused set of early customers across
+              RepShield is live with a focused set of early customers across
               retail, automotive, and professional services in India. Google Business Profile
               integration is live. We&apos;re actively onboarding new businesses — reach out to get early
               access.
@@ -134,7 +134,7 @@ export default function AboutPage() {
             Ready to protect your reputation?
           </h2>
           <p className="text-base mb-8" style={{ color: '#94A3B8' }}>
-            Join our beta and be among the first businesses to put review management on autopilot.
+            Join us and be among the first businesses to put review management on autopilot.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
